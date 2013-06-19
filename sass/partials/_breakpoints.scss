@@ -1,0 +1,28 @@
+//
+// Breakpoints
+//
+
+// Max width of page (Change as needed)
+$max-width: 960px;
+
+
+// Smartphone
+$bp-smartphone: 320px;
+$bp-smartphone_only: 320px 767px;
+$bp-smartphone_landscape: 480px;
+$bp-smartphone_landscape_only: 480px 767px;
+
+
+// Tablet
+$bp-tablet: 768px;
+$bp-tablet_small: 768px 839px;
+$bp-tablet_large: 840px 979px;
+$bp-tablet_only: 768px 979px;
+
+
+// Desktop
+$bp-desktop: 980px;
+
+
+// 2x device pixel
+$bp-hi-rez: 2 device-pixel-ratio;
