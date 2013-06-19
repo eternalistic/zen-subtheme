@@ -157,18 +157,15 @@ body {
  */
 
 a {
-  color: $maroon;
   text-decoration: underline;
   transition: color 0.2s ease-in-out 0s;
 }
 
 a:visited {
-  color: $maroon;
 }
 
 a:hover,
 a:focus {
-  color: $green-light;
 }
 
 a:active {
