@@ -97,7 +97,7 @@
   <?php endif; ?>
 
   <!--[if lt IE 9]>
-  <link type="text/css" rel="stylesheet" href="<?php print $base_path . $path_to_subtheme; ?>/css/ie8.css" media="all" />
+  <link type="text/css" rel="stylesheet" href="<?php print $base_path . $path_to_subtheme; ?>/css/ie/ie8.css" media="all" />
   <![endif]--> 
 
 </head>

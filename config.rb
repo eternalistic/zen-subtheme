@@ -8,8 +8,8 @@
 
 
 # Change this to :production when ready to deploy the CSS to the live server.
-environment = :development
-#environment = :production
+#environment = :development
+environment = :production
 
 # In development, we can turn on the FireSass-compatible debug_info.
 firesass = false
@@ -27,6 +27,7 @@ javascripts_dir = "js"
 # Require any additional compass plugins installed on your system.
 #require 'ninesixty'
 #require 'zen-grids'
+require 'sass-globbing'
 require 'rgbapng'
 require 'breakpoint'
 

@@ -1,0 +1,46 @@
+// Tablet
+@include gs-media(t) {
+
+  /*
+   * The layout when there is only one sidebar, the left one.
+   */
+  .sidebar-first {
+    #content {
+      @include gs-span(t, 2, 4);
+    }
+
+    .region-sidebar-first {
+      @include gs-span(t, 1);
+    }
+  }
+
+  /*
+   * The layout when there is only one sidebar, the right one.
+   */
+  .sidebar-second {
+    #content {
+      @include gs-span(t, 1);
+    }
+
+    .region-sidebar-second {
+      @include gs-span(t, 1);
+    }
+  }
+
+   /*
+   * The layout when there are two sidebars.
+   */
+  .two-sidebars {
+    #content {
+      @include gs-span(t, 1);
+    }
+
+    .region-sidebar-first {
+      @include gs-span(t, 1);
+    }
+
+    .region-sidebar-second {
+      @include gs-span(t, 1);
+    }
+  }
+}

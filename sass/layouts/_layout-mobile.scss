@@ -1,0 +1,44 @@
+// Mobile
+@include gs-media(m) {
+
+  /*
+   * The layout when there is only one sidebar, the left one.
+   */
+  .sidebar-first {
+    #content {
+    }
+
+    .region-sidebar-first {
+    }
+  }
+
+  /*
+   * The layout when there is only one sidebar, the right one.
+   */
+  .sidebar-second {
+    #content {
+      @include gs-span(m, 1);
+    }
+
+    .region-sidebar-second {
+      @include gs-span(m, 1);
+    }
+  }
+
+   /*
+   * The layout when there are two sidebars.
+   */
+  .two-sidebars {
+    #content {
+      @include gs-span(m, 1);
+    }
+
+    .region-sidebar-first {
+      @include gs-span(m, 1);
+    }
+
+    .region-sidebar-second {
+      @include gs-span(m, all); // Clear sidebar and content and span full width
+    }
+  }
+}

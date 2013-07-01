@@ -1,22 +1,23 @@
-// Custom
-@import "partials/base";				// Import base
+// Compass extensions
+@import "compass/support";  											// Add Compass' IE and vendor prefix support variables.
+@import "compass/utilities/sprites"; 							// See http://compass-style.org/help/tutorials/spriting/
+@import "compass/css3";     											// Use one CSS3 mixin instead of multiple vendor prefixes.
+@import "compass/typography/vertical_rhythm"; 		// Helps set up a vertical rhythm.
+
+
+// Custom extensions
+@import "breakpoint"; 		// Import Breakpoint
+@import "rgbapng";				// RGBApng
+
+
+// Partials
+@import "partials/*";			// Import partials
 
 
 // Styling
-@import "icons";								// Import our custom mixins last.
-@import "buttons";							// Import our custom mixins last.
-@import "blocks";								// Import our custom mixins last.
-@import "comments";							// Import our custom mixins last.
-@import "fields";								// Import our custom mixins last.
-@import "forms";								// Import our custom mixins last.
-@import "layout";								// Import our custom mixins last.
-@import "navigation";						// Import our custom mixins last.
-@import "nodes";								// Import our custom mixins last.
-@import "pages";								// Import our custom mixins last.
-@import "search";								// Import our custom mixins last.
-@import "tabs";									// Import our custom mixins last.
-@import "views-styles";					// Import our custom mixins last.
+@import "layouts/*";			// Import layouts
+@import "modules/*";			// Import modules
 
 
 // Print
-@import "print";								// Import our custom mixins last.
+@import "print/*";				// Import print styles
