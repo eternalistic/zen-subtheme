@@ -29,7 +29,7 @@
  */
 ?>
 
-<?php if ($view_mode == ("entity_clean" || "entity_clean_phone" || "teaser_mini" || "teaser_min_list")): ?>
+<?php if ($view_mode == ("entity_clean")): ?>
   <?php print render($content); ?>
 
 <?php elseif ($view_mode == "entity_title"): ?>

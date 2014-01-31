@@ -8,7 +8,6 @@
  */
 ?>
 
-
 <?php /*
 <div id="redline-nav"></div>
 <a id="gridtoggle" href="#">GRID</a><div id="grid"></div>
@@ -17,6 +16,8 @@
 */ ?>
 
 <div id="page">
+
+  <?php print render($page['header']); ?>
 
   <header id="header" role="banner">
 
@@ -48,30 +49,20 @@
 
   </header>
 
+  <?php print render($page['preface']); ?>
+
   <div id="main">
     <div class="inner">
 
       <div id="content" role="main">
         <?php print render($page['highlighted']); ?>
-
         <?php print $breadcrumb; ?>
         <a id="main-content"></a>
-        <?php print render($page['content_top']); ?>
-
-        <?php if(isset($node) && $node->type !== 'team_member'): ?>
-          <?php print render($title_prefix); ?>
-          <?php if ($title): ?>
-            <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
-          <?php endif; ?>
-          <?php print render($title_suffix); ?>
-        <?php elseif(!isset($node)): ?>
-          <?php print render($title_prefix); ?>
-          <?php if ($title): ?>
-            <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
-          <?php endif; ?>
-          <?php print render($title_suffix); ?>
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h1 class="title" id="page-title"><?php print $title; ?></h1>
         <?php endif; ?>
-
+        <?php print render($title_suffix); ?>
         <?php print $messages; ?>
         <?php print render($tabs); ?>
         <?php print render($page['help']); ?>
@@ -80,7 +71,6 @@
         <?php endif; ?>
         <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>
-        <?php print render($page['content_bottom']); ?>
 
       </div><!-- /#content -->
 
@@ -90,20 +80,17 @@
         $sidebar_second = render($page['sidebar_second']);
       ?>
 
-      <?php if ($sidebar_first): ?>
-        <?php print $sidebar_first; ?>
+      <?php if ($sidebar_first || $sidebar_second): ?>
+        <aside class="sidebars">
+          <?php print $sidebar_first; ?>
+          <?php print $sidebar_second; ?>
+        </aside><!-- /.sidebars -->
       <?php endif; ?>
-
-      <?php print render($page['background']); ?>
-
-      <div id="content-fade"></div>
 
     </div><!-- /.main-inner -->
   </div><!-- /#main -->
 
-  <?php if ($sidebar_second): ?>
-    <?php print $sidebar_second; ?>
-  <?php endif; ?>
+  <?php print render($page['postscript']); ?>
 
   <?php print render($page['footer']); ?>
 
