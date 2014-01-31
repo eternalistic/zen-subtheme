@@ -117,10 +117,10 @@ function zen_subtheme_preprocess_html(&$vars) {
   global $base_path;
 
   // Add path to theme
-  $vars['path_to_subtheme'] = drupal_get_path('theme', 'zen_subtheme');
+  $vars['path_to_theme'] = drupal_get_path('theme', 'zen_subtheme');
 
   // Apple touch icon
-  // $appleIcon = array('#tag' => 'link', '#attributes' => array('href' => $base_path . $vars['path_to_subtheme'] . '/apple-touch-icon.png', 'rel' => 'apple-touch-icon'),);
+  // $appleIcon = array('#tag' => 'link', '#attributes' => array('href' => $base_path . $vars['path_to_theme'] . '/apple-touch-icon.png', 'rel' => 'apple-touch-icon'),);
   // drupal_add_html_head($appleIcon, 'apple-touch-icon');
 
 }
@@ -134,10 +134,10 @@ function zen_subtheme_preprocess_html(&$vars) {
 //   // global $base_path;
 
 //   // Add path to theme
-//   $vars['path_to_subtheme'] = drupal_get_path('theme', 'zen_subtheme');
+//   $vars['path_to_theme'] = drupal_get_path('theme', 'zen_subtheme');
 
 //   // Logo - SVG
-// 	$vars['logo'] = $base_path . $vars['path_to_subtheme'] . '/logo.svg';
+// 	$vars['logo'] = $base_path . $vars['path_to_theme'] . '/logo.svg';
 
 // }
 

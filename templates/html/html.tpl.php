@@ -23,19 +23,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php endif; ?>
   <meta http-equiv="cleartype" content="on">
-
-  <script type="text/javascript" src="//use.typekit.net/mfq3fie.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   
   <?php print $styles; ?>
 
   <!--[if (lt IE 9)]>
-  <link type="text/css" rel="stylesheet" href="<?php print $base_path . $path_to_dt; ?>/css/styles-ie8.css" media="all" />
-  <script src="<?php print $base_path . $path_to_dt; ?>/js/html5/html5shiv.js"></script>
+  <link type="text/css" rel="stylesheet" href="<?php print $base_path . $path_to_theme; ?>/css/styles-ie8.css" media="all" />
+  <script src="<?php print $base_path . $path_to_theme; ?>/js/html5/html5shiv.js"></script>
   <![endif]-->
    
   <!--[if (gte IE 9)|(IEMobile)|(!IE)]><!-->
-  <link type="text/css" rel="stylesheet" href="<?php print $base_path . $path_to_dt; ?>/css/styles.css" media="all" />
+  <link type="text/css" rel="stylesheet" href="<?php print $base_path . $path_to_theme; ?>/css/styles.css" media="all" />
   <!--<![endif]-->
 
   <?php print $scripts; ?>
