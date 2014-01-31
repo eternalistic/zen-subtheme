@@ -12,8 +12,8 @@
 ; page at admin/appearance.
 
 screenshot  = screenshot.png
-name        = Starter Zen Subtheme
-description = Read the <a href="http://drupal.org/node/873778">online docs</a> or the included README.txt on how to create a theme with Zen.
+name        = Zen Sub-theme Starter Kit
+description = Customized by Eternalistic (@eternalistic)
 
 
 
@@ -48,7 +48,7 @@ base theme  = zen
 stylesheets[all][] = system.menus.css
 
 ; Then we add our own stylesheets.
-stylesheets[all][] = css/style.css
+; stylesheets[all][] = css/styles.css
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html
@@ -63,8 +63,7 @@ stylesheets[all][] = css/style.css
 
 
 ; Optionally add some JavaScripts to your theme.
-
-;scripts[] = js/script.js
+scripts[] = js/build/production.min.js
 
 
 
@@ -85,15 +84,15 @@ stylesheets[all][] = css/style.css
 
 regions[header]         = Header
 regions[navigation]     = Navigation bar
+regions[preface]    		= Preface
 regions[highlighted]    = Highlighted
 regions[help]           = Help
 regions[content]        = Content
 regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar
+regions[postscript]     = Postscript
 regions[footer]         = Footer
 regions[bottom]         = Page bottom
-regions[page_top]       = Page top
-regions[page_bottom]    = Page bottom
 
 ; The page_top and page_bottom regions are hidden, which means they will not
 ; show up on the blocks administration page. But they are required in order for

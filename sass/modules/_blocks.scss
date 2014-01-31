@@ -1,24 +1,22 @@
-/**
- * @file
- * Block Styling
- */
+//
+// Blocks
+//
 
 
-.block { /* Block wrapper */
-  margin-bottom: 1.5em;
+// Block
+.block {
+  margin-bottom: em(25px);
+}
 
-  &.first { /* The first block in the region */
-  }
 
-  &.last { /* The last block in the region */
-  }
+// Block title
+h2.block-title {
+  color: $gray-50;
+	font-weight: $fw-med;
+	font-size: em(24px);
+	margin-bottom: em(15px);
 
-  &.odd { /* Zebra striping for each block in the region */
-  }
-
-  &.even { /* Zebra striping for each block in the region */
-  }
-
-  h2.block-title { /* Block title */
+  @include breakpoint($bp-xlarge, $no-query: true) {
+  	color: $gray-100;
   }
 }

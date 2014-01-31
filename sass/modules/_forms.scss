@@ -5,7 +5,7 @@
 
 
 .form-item { /* Wrapper for a form element (or group of form elements) and its label */
-  margin: 0 0 1.5em 0;
+  margin: 0 0 em(8px) 0;
 
   input.error,
   textarea.error,
@@ -14,8 +14,11 @@
   }
 
   label { /* The label for a form element */
+    color: $gray-150;
     display: block;
-    font-weight: bold;
+    font-weight: 100;
+    line-height: 100%;
+    margin: 0;
   }
 
   label.option { /* The label for a radio button or checkbox */
@@ -38,6 +41,7 @@
 }
 
 .form-submit { /* The submit button */
+  outline: none;
 }
 
 .container-inline {
@@ -145,4 +149,22 @@ form {
 
 td.menu-disabled {
   background: #ccc;
+}
+
+
+// Form text
+.form-text,
+.form-textarea {
+  background: $gray-247;
+  border: none;
+  max-width: 100%;
+  outline: none;
+  padding: em(15px);
+  width: 100%;
+
+  // Transitions
+  transition: all 0.2s ease-in 0s;
+
+  &:focus {
+  }
 }

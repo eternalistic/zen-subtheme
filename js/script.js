@@ -12,8 +12,14 @@
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
 (function ($, Drupal, window, document, undefined) {
 
+  // // Grid toggle
+  // $(function() {
 
-// Place your code here.
+  //   $("#gridtoggle").click(function(e) {
+  //     $("#grid").toggle();
+  //     e.preventDefault();
+  //   });
 
+  // });
 
 })(jQuery, Drupal, this, this.document);

@@ -65,7 +65,7 @@
  *     original, found in modules/field/field.module: theme_field()
  *     theme override, found in template.php: zen_subtheme_field()
  *
- *   where zen_subtheme is the name of your sub-theme. For example, the
+ *   where STARTERKIT is the name of your sub-theme. For example, the
  *   zen_classic theme would define a zen_classic_field() function.
  *
  *   Note that base themes can also override theme functions. And those
@@ -103,130 +103,6 @@
 
 
 /**
- * Override or insert variables into the maintenance page template.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("maintenance_page" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function zen_subtheme_preprocess_maintenance_page(&$variables, $hook) {
-  // When a variable is manipulated or added in preprocess_html or
-  // preprocess_page, that same work is probably needed for the maintenance page
-  // as well, so we can just re-use those functions to do that work here.
-  zen_subtheme_preprocess_html($variables, $hook);
-  zen_subtheme_preprocess_page($variables, $hook);
-}
-// */
-
-/**
- * Override or insert variables into the html templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("html" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function zen_subtheme_preprocess_html(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-
-  // The body tag's classes are controlled by the $classes_array variable. To
-  // remove a class from $classes_array, use array_diff().
-  //$variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
-}
-// */
-
-/**
- * Override or insert variables into the page templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("page" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function zen_subtheme_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-}
-// */
-
-/**
- * Override or insert variables into the node templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("node" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function zen_subtheme_preprocess_node(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-
-  // Optionally, run node-type-specific preprocess functions, like
-  // zen_subtheme_preprocess_node_page() or zen_subtheme_preprocess_node_story().
-  $function = __FUNCTION__ . '_' . $variables['node']->type;
-  if (function_exists($function)) {
-    $function($variables, $hook);
-  }
-}
-// */
-
-/**
- * Override or insert variables into the comment templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("comment" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function zen_subtheme_preprocess_comment(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-}
-// */
-
-/**
- * Override or insert variables into the region templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("region" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function zen_subtheme_preprocess_region(&$variables, $hook) {
-  // Don't use Zen's region--sidebar.tpl.php template for sidebars.
-  //if (strpos($variables['region'], 'sidebar_') === 0) {
-  //  $variables['theme_hook_suggestions'] = array_diff($variables['theme_hook_suggestions'], array('region__sidebar'));
-  //}
-}
-// */
-
-/**
- * Override or insert variables into the block templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("block" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function zen_subtheme_preprocess_block(&$variables, $hook) {
-  // Add a count to all the blocks in the region.
-  // $variables['classes_array'][] = 'count-' . $variables['block_id'];
-
-  // By default, Zen will use the block--no-wrapper.tpl.php for the main
-  // content. This optional bit of code undoes that:
-  //if ($variables['block_html_id'] == 'block-system-main') {
-  //  $variables['theme_hook_suggestions'] = array_diff($variables['theme_hook_suggestions'], array('block__no_wrapper'));
-  //}
-}
-// */
-
-
-/**
  * Override or insert variables into the html template.
  *
  * @param $variables
@@ -238,37 +114,67 @@ function zen_subtheme_preprocess_block(&$variables, $hook) {
  */
 function zen_subtheme_preprocess_html(&$vars) {
 
-  // Add variables and paths needed for HTML5 and responsive support.
+  global $base_path;
+
+  // Add path to theme
   $vars['path_to_subtheme'] = drupal_get_path('theme', 'zen_subtheme');
 
   // Apple touch icon
-  //$appleIcon = array('#tag' => 'link', '#attributes' => array('href' => $vars['path_to_subtheme'] . '/apple-touch-icon.png', 'rel' => 'apple-touch-icon'),);
-  //drupal_add_html_head($appleIcon, 'apple-touch-icon');
+  // $appleIcon = array('#tag' => 'link', '#attributes' => array('href' => $base_path . $vars['path_to_subtheme'] . '/apple-touch-icon.png', 'rel' => 'apple-touch-icon'),);
+  // drupal_add_html_head($appleIcon, 'apple-touch-icon');
+
 }
 
 
-// Ouptuts site breadcrumbs with current page title appended onto trail
-function zen_subtheme_breadcrumb($variables) {
-  $breadcrumb = $variables['breadcrumb'];
-  if (!empty($breadcrumb)) {
-    // Provide a navigational heading to give context for breadcrumb links to
-    // screen-reader users. Make the heading invisible with .element-invisible.
-    $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
-    $crumbs = '<div class="breadcrumb"><div class="wrapper"><ul>';
-    $array_size = count($breadcrumb);
-    $i = 0;
-    while ( $i < $array_size) {
-      $crumbs .= '<li class="breadcrumb-' . $i;
-      if ($i == 0) {
-        $crumbs .= ' first';
-      }
-      if ($i+1 == $array_size) {
-        $crumbs .= ' last';
-      }
-      $crumbs .=  '">' . $breadcrumb[$i] . '</li> >';
-      $i++;
-    }
-    $crumbs .= '<li class="active">' . drupal_get_title() . '</li></ul></div></div>';
-    return $crumbs;
-  }
-}
+/** 
+ * Implements hook_preprocess_page().
+ */
+// function zen_subtheme_preprocess_page(&$vars) {
+
+//   // global $base_path;
+
+//   // Add path to theme
+//   $vars['path_to_subtheme'] = drupal_get_path('theme', 'zen_subtheme');
+
+//   // Logo - SVG
+// 	$vars['logo'] = $base_path . $vars['path_to_subtheme'] . '/logo.svg';
+
+// }
+
+
+/**
+ * Override or insert variables into the node templates.
+ *
+ * @param $vars
+ *   An array of variables to pass to the theme template.
+ */
+// function zen_subtheme_preprocess_node(&$vars, $hook) {
+
+//   // print dsm($vars);
+
+//   $node = $vars['node'];
+
+//   switch ($node->type) {
+
+//     // Case study
+//     case 'case_study':
+
+//       switch ($vars['view_mode']) {
+
+//         case 'teaser':
+
+//         	// Remove title
+// 					$vars['title'] = '';
+
+//           // Add read more to body suffix
+//           $vars['content']['body']['#suffix'] = l(t('> View case study'), 'node/' . $node->nid, array('html' => TRUE, 'attributes' => array('class' => 'readmore')));
+
+//           // Unset variables
+// 					unset($vars['content']['field_company']);
+
+//       	break;
+//     }
+//     break;
+
+//   }
+// }

@@ -7,4 +7,23 @@
 a.button:link,
 a.button:visited,
 .form-submit {
+	background: $teal;
+	border: none;
+	color: $white;
+	font-weight: $fw-reg;
+	line-height: 100%;
+	padding: em(15px) em(20px);
+
+	&:hover,
+	&:focus,
+	&:active {
+	}
 }
+
+
+// Submit
+.form-submit {
+	margin-right: em(10px);
+}
+
+

@@ -6,7 +6,7 @@
 // Basic positioning styles shared by primary and secondary tabs.
 ul.primary,
 ul.secondary {
-  //@include cf;
+  //@extend %clearfix;
   list-style: none;
   margin: 0 0 1em 0;
   padding: 0;
@@ -25,7 +25,7 @@ ul.primary {
   li {
     margin-bottom: .5em;
 
-    @include breakpoint($bp-tablet) {
+    @include breakpoint($bp-medium) {
       display: inline-block;
       margin-right: -5px;
     }
@@ -44,7 +44,6 @@ ul.primary {
     color: #404040;
     display: block;
     font-size: em(16px);
-    font-weight: 500;
     line-height: 100%;
     outline: none;
     padding: 10px 15px;
@@ -52,9 +51,8 @@ ul.primary {
     text-decoration: none;
     text-shadow: 0 1px 1px white;
 
-    @include breakpoint($bp-tablet) {
+    @include breakpoint($bp-medium) {
       display: inline-block;
-      letter-spacing: .04em;
       width: auto;
     }
 
@@ -68,7 +66,7 @@ ul.primary {
       border-top: 1px solid #7a7978;
       @include box-shadow(rgba(100, 184, 214, .9) 0 0 2px 2px);
       
-      @include breakpoint($bp-tablet) {
+      @include breakpoint($bp-medium) {
         @include box-shadow(none);
       }
     }
@@ -87,7 +85,7 @@ ul.secondary {
     display: inline;
     margin-bottom: .5em;
 
-    @include breakpoint($bp-tablet) {
+    @include breakpoint($bp-medium) {
       display: inline-block;
     }
 
@@ -106,7 +104,6 @@ ul.secondary {
     display: inline-block;
     font-size: em(16px);
     font-weight: bold;
-    letter-spacing: .04em;
     line-height: 100%;
     margin: 0 auto;
     outline: none;

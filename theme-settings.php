@@ -18,7 +18,7 @@ function zen_subtheme_form_system_theme_settings_alter(&$form, &$form_state, $fo
   /* -- Delete this line if you want to use this setting
   $form['zen_subtheme_example'] = array(
     '#type'          => 'checkbox',
-    '#title'         => t('zen_subtheme sample setting'),
+    '#title'         => t('STARTERKIT sample setting'),
     '#default_value' => theme_get_setting('zen_subtheme_example'),
     '#description'   => t("This option doesn't do anything; it's just an example."),
   );

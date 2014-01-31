@@ -43,91 +43,9 @@
 }
 
 
-// Pager
-ul.pager {
-  @include cf;
-
-  li {
-    display: inline-block;
-    padding: 0;
-    margin: 0 5px;
-    text-align: center;
-
-    &.pager-next,
-    &.pager-previous {
-
-      a:link,
-      a:visited {
-        background: #f8f7f6;
-        @include background-image(linear-gradient(#f8f7f6, #e0dfdf));
-        border: 1px solid #bfbcba;
-        border-top: 1px solid #fcfbfb;
-        @include border-radius(3px);
-        color: #404040;
-        display: block;
-        font-size: em(16px);
-        font-weight: bold;
-        line-height: 100%;
-        margin: 0 auto;
-        outline: none;
-        padding: 8px 10px;
-        text-align: center;
-        text-decoration: none;
-        text-shadow: 0 1px 0 white;
-
-        &:hover {
-          @include box-shadow(rgba(100, 184, 214, .9) 0 0 2px 2px);
-        }
-
-        &:focus {
-          background: #c5c4c3;
-          @include background-image(linear-gradient(#c5c4c3, #f8f7f6));
-          border: 1px solid #bcb9b8;
-          border-bottom: 1px solid #f2f2f1;
-          border-top: 1px solid #7a7978;
-        }
-      }
-    }
-
-    // First and Last
-    &.pager-first,
-    &.pager-last {
-      display: inline-block;
-      font-size: em(16px);
-      text-transform: uppercase;
-
-      a:link,
-      a:visited {
-        color: $gray;
-      }
-    }
-
-    // Previous
-    &.pager-previous {
-      float: left;
-    }
-
-    &.pager-next {
-      float: right;
-    }
-
-    &.pager-current {
-      color: $gray;
-      font-size: em(20px);
-      font-weight: normal;
-    }
-
-    &.pager-item {
-      display: inline-block;
-      font-size: em(20px);
-      padding: 8px 10px;
-
-      a:link,
-      a:visited {
-        color: blue;
-        text-decoration: underline;
-      }
-    }
+// View list
+.view-list {
+  .view-content {
+    @extend %resetlist;
   }
 }
-
