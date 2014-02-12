@@ -3,12 +3,65 @@
 //
 
 
-// Defaults
-$grids: 4;
-$gutters: 1/4;
+// Sidebar first
+.sidebar-first {
+
+	// Content
+  #content {
+	  @include breakpoint($bp-large, $no-query: true) {   
+	    @include grid-span(9, 4);
+	  }
+  }
+
+	// Sidebar first
+  .region-sidebar-first {
+	  @include breakpoint($bp-large, $no-query: true) {   
+	    @include grid-span(3, 1);
+	  }
+  }
+}
 
 
-// Responsive
-$grids: add-grid(8 at $bp-small);
-$grids: add-grid(12 at $bp-medium);
-$grids: add-grid(18 at $bp-large);
+// Sidebar second
+.sidebar-second {
+
+	// Content
+  #content {
+	  @include breakpoint($bp-large, $no-query: true) {   
+	    @include grid-span(9, 1);
+	  }
+  }
+
+	// Sidebar second
+  .region-sidebar-second {
+	  @include breakpoint($bp-large, $no-query: true) {   
+	    @include grid-span(3, 10);
+	  }
+  }
+}
+
+
+// Two sidebars
+.two-sidebars {
+
+	// Content
+  #content {
+	  @include breakpoint($bp-large, $no-query: true) {   
+	    @include grid-span(6, 4);
+	  }
+  }
+
+  // Sidebar first
+  .region-sidebar-first {
+	  @include breakpoint($bp-large, $no-query: true) {   
+	    @include grid-span(3, 1);
+	  }
+  }
+
+  // Sidebar second
+  .region-sidebar-second {
+	  @include breakpoint($bp-large, $no-query: true) {   
+	    @include grid-span(3, 10);
+	  }
+  }
+}

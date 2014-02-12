@@ -22,16 +22,13 @@
 // HTML
 html {
 	background: $white;
-	font-family: $font-body;
-  font-weight: $fw-ul;
+  color: $gray-100;
+  font-family: $font-body;
 }
 
 
 // Body
 body {
-  color: $gray-100;
-	font-family: $font-body;
-	font-style: normal;
 }
 
 
@@ -45,6 +42,7 @@ body {
 
 // Page
 #page {
+  @extend %wrapper;
 }
 
 
@@ -80,6 +78,7 @@ body {
 
 // Main
 #main {
+  @extend %clearfix;
 }
 
 

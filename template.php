@@ -178,3 +178,29 @@ function zen_subtheme_preprocess_html(&$vars) {
 
 //   }
 // }
+
+
+/**
+ * Implements hook_breadcrumb
+ */
+function zen_subtheme_breadcrumb($variables) {
+  $breadcrumb = $variables['breadcrumb'];
+  $crumb_arrow = '<span class="crumbs-divider"> / </span>';
+
+  if (!empty($breadcrumb)) {
+    $array_size = count($breadcrumb);
+    while ($array_size > 2):
+      array_pop($breadcrumb);
+      $array_size--;
+    endwhile;
+
+    $arr_crumbs = array();
+    array_push($arr_crumbs, '<span class="crumbs">' . implode($crumb_arrow, $breadcrumb) . '</span>');
+
+    $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+    $output .= array_pop($arr_crumbs);
+
+  	return '<div class="breadcrumb">' . $output . '</div>';
+  }
+
+}
