@@ -60,10 +60,10 @@
  *   api.drupal.org website is a good place to find which file contains which
  *   function.) Then you can copy the original function in its entirety and
  *   paste it in this template.php file, changing the prefix from theme_ to
- *   zen_subtheme_. For example:
+ *   zen_ghp_. For example:
  *
  *     original, found in modules/field/field.module: theme_field()
- *     theme override, found in template.php: zen_subtheme_field()
+ *     theme override, found in template.php: zen_ghp_field()
  *
  *   where STARTERKIT is the name of your sub-theme. For example, the
  *   zen_classic theme would define a zen_classic_field() function.
@@ -112,12 +112,12 @@
  *   also be "maintenance_page" since zen_preprocess_maintenance_page() calls
  *   this function to have consistent variables.
  */
-function zen_subtheme_preprocess_html(&$vars) {
+function zen_ghp_preprocess_html(&$vars) {
 
   global $base_path;
 
   // Add path to theme
-  $vars['path_to_theme'] = drupal_get_path('theme', 'zen_subtheme');
+  $vars['path_to_theme'] = drupal_get_path('theme', 'zen_ghp');
 
   // Apple touch icon
   // $appleIcon = array('#tag' => 'link', '#attributes' => array('href' => $base_path . $vars['path_to_theme'] . '/apple-touch-icon.png', 'rel' => 'apple-touch-icon'),);
@@ -129,17 +129,17 @@ function zen_subtheme_preprocess_html(&$vars) {
 /** 
  * Implements hook_preprocess_page().
  */
-// function zen_subtheme_preprocess_page(&$vars) {
+function zen_ghp_preprocess_page(&$vars) {
 
-//   // global $base_path;
+  global $base_path;
 
-//   // Add path to theme
-//   $vars['path_to_theme'] = drupal_get_path('theme', 'zen_subtheme');
+  // Add path to theme
+  $vars['path_to_theme'] = drupal_get_path('theme', 'zen_ghp');
 
-//   // Logo - SVG
-// 	$vars['logo'] = $base_path . $vars['path_to_theme'] . '/logo.svg';
+  // Logo - SVG
+	// $vars['logo'] = $base_path . $vars['path_to_theme'] . '/logo.svg';
 
-// }
+}
 
 
 /**
@@ -148,7 +148,7 @@ function zen_subtheme_preprocess_html(&$vars) {
  * @param $vars
  *   An array of variables to pass to the theme template.
  */
-// function zen_subtheme_preprocess_node(&$vars, $hook) {
+// function zen_ghp_preprocess_node(&$vars, $hook) {
 
 //   // print dsm($vars);
 
@@ -183,7 +183,7 @@ function zen_subtheme_preprocess_html(&$vars) {
 /**
  * Implements hook_breadcrumb
  */
-function zen_subtheme_breadcrumb($variables) {
+function zen_ghp_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
   $crumb_arrow = '<span class="crumbs-divider"> / </span>';
 
@@ -201,6 +201,50 @@ function zen_subtheme_breadcrumb($variables) {
     $output .= array_pop($arr_crumbs);
 
   	return '<div class="breadcrumb">' . $output . '</div>';
+  }
+
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function zen_ghp_form_alter(&$form, &$form_state, $form_id) {
+
+  // drupal_set_message($form_id);
+  // dsm($form);
+
+  switch ($form_id)  {
+
+    // Search block form
+    case 'search_block_form':
+
+      // Change title for search and hide it
+      $form['search_block_form']['#title'] = t('Search');
+      $form['search_block_form']['#title_display'] = 'invisible';
+
+      // Button
+      $form['actions']['submit'] = array('#type' => 'image_button', '#src' => base_path() . path_to_theme() . '/images/search-icon.png');
+
+      // Add extra attributes to the text box
+      $searchtext = 'Enter search term...';
+      $form['search_block_form']['#default_value'] = t($searchtext);
+      $form['search_block_form']['#attributes']['onblur'] = "if (this.value == '') {this.value = '$searchtext';}";
+      $form['search_block_form']['#attributes']['onfocus'] = "if (this.value == '$searchtext') {this.value = '';}";
+
+      // Prevent user from searching the default text
+      $form['#attributes']['onsubmit'] = "if(this.search_block_form.value=='$searchtext'){return false; }";
+
+      break;
+
+
+    // Search block form
+    case 'search_form':
+
+      // Button
+      $form['basic']['submit'] = array('#type' => 'image_button', '#src' => base_path() . path_to_theme() . '/images/search-icon.png');
+
+      break;
   }
 
 }

@@ -26,14 +26,36 @@ function(){a.checkForEmpty()})};a.fadeOnFocus=function(){a.showing&&a.setOpacity
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
 (function ($, Drupal, window, document, undefined) {
 
-  // // Grid toggle
-  // $(function() {
 
-  //   $("#gridtoggle").click(function(e) {
-  //     $("#grid").toggle();
-  //     e.preventDefault();
-  //   });
+    // Check for SVG
+    // Source: http://toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script/
+    if(!Modernizr.svg) {
+      $('img[src*="svg"]').attr('src', function() {
+          return $(this).attr('src').replace('.svg', '.png');
+      });
+    }
 
-  // });
+
+	// Nav toggle
+    var $navToggle = $('#nav-toggle');
+    $navToggle.click(function(e){
+        $(this).toggleClass('active');
+        $('#header').toggleClass('expanded');
+        $('.menu-blocks', '#header').slideToggle();
+        $('html, body').animate({
+            scrollTop: $('#page').offset().top
+        });
+        e.preventDefault();
+    });
+
+
+	// Infield label
+    $(function(){
+
+		// Contact us
+		$('#webform-client-form-17 label').inFieldLabels();
+
+    });
+
 
 })(jQuery, Drupal, this, this.document);

@@ -8,61 +8,57 @@
  */
 ?>
 
-<?php /*
-<div id="redline-nav"></div>
-<a id="gridtoggle" href="#">GRID</a><div id="grid"></div>
-<div id="redline-first" class="redline"></div>
-<div id="redline-second" class="redline"></div>
-*/ ?>
-
 <div id="page">
 
-  <?php print render($page['header']); ?>
-
   <header id="header" role="banner">
+    <div class="inner clearfix">
 
-    <?php if ($logo): ?>
-      <div id="header-logo">
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo">
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" />
-        </a>
-      </div>
-    <?php endif; ?>
+      <?php if ($logo): ?>
+        <div id="header-logo">
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo">
+            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" />
+          </a>
+        </div>
+      <?php endif; ?>
 
-    <?php if ($site_name || $site_slogan): ?>
-      <div class="header__name-and-slogan" id="name-and-slogan">
-        <?php if ($site_name): ?>
-          <h1 class="header__site-name" id="site-name">
-            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="header__site-link" rel="home"><span><?php print $site_name; ?></span></a>
-          </h1>
-        <?php endif; ?>
+      <?php if ($site_name || $site_slogan): ?>
+        <div class="header__name-and-slogan" id="name-and-slogan">
+          <?php if ($site_name): ?>
+            <h1 class="header__site-name" id="site-name">
+              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="header__site-link" rel="home"><span><?php print $site_name; ?></span></a>
+            </h1>
+          <?php endif; ?>
 
-        <?php if ($site_slogan): ?>
-          <div class="header__site-slogan" id="site-slogan"><?php print $site_slogan; ?></div>
-        <?php endif; ?>
-      </div>
-    <?php endif; ?>
+          <?php if ($site_slogan): ?>
+            <div class="header__site-slogan" id="site-slogan"><?php print $site_slogan; ?></div>
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>
 
-    <nav id="navigation" role="navigation">
+      <?php print render($page['header']); ?> 
       <?php print render($page['navigation']); ?>
-    </nav><!-- /nav -->
+
+    </div><!-- /.inner -->
 
   </header>
 
   <?php print render($page['preface']); ?>
 
   <div id="main">
-    <div class="inner">
-
+    <div class="inner main-inner clearfix">
       <div id="content" role="main">
         <?php print render($page['highlighted']); ?>
         <?php print $breadcrumb; ?>
         <a id="main-content"></a>
-        <?php print render($title_prefix); ?>
-        <?php if ($title): ?>
-          <h1 class="title" id="page-title"><?php print $title; ?></h1>
+
+        <?php if(isset($node) && !$is_front): ?>
+          <?php print render($title_prefix); ?>
+          <?php if ($title): ?>
+            <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
+          <?php endif; ?>
+          <?php print render($title_suffix); ?>
         <?php endif; ?>
-        <?php print render($title_suffix); ?>
+
         <?php print $messages; ?>
         <?php print render($tabs); ?>
         <?php print render($page['help']); ?>
@@ -71,7 +67,7 @@
         <?php endif; ?>
         <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>
-
+        <?php print render($page['content_bottom']); ?>
       </div><!-- /#content -->
 
       <?php
@@ -87,7 +83,7 @@
         </aside><!-- /.sidebars -->
       <?php endif; ?>
 
-    </div><!-- /.main-inner -->
+    </div><!-- /.inner -->
   </div><!-- /#main -->
 
   <?php print render($page['postscript']); ?>

@@ -44,15 +44,13 @@ $arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
 $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
-// Web Fonts
-// $font-body: 			"ag-book", sans-serif;
-$font-body: 			$helvetica;
+// Typekit fonts
+$tisa: "ff-tisa-web-pro",serif;
+$proxima: "proxima-nova", sans-serif;
 
-
-// Font Weights
-$fw-ul: 			200;
-$fw-reg: 			400;
-$fw-med: 			500;
+// Default font styles
+$font-body: $tisa;
+$font-header: $proxima;
 
 // Now create some variables for the font stacks we want to use on this site.
 $base-font-family: $font-body; // The font family set on the html element.

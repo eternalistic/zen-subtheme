@@ -17,11 +17,9 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
 
-  <?php if ($default_mobile_metatags): ?>
-    <meta name="MobileOptimized" content="width">
-    <meta name="HandheldFriendly" content="true">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php endif; ?>
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="cleartype" content="on">
   
   <?php print $styles; ?>
@@ -34,6 +32,9 @@
   <!--[if (gte IE 9)|(IEMobile)|(!IE)]><!-->
   <link type="text/css" rel="stylesheet" href="<?php print $base_path . $path_to_theme; ?>/css/styles.css" media="all" />
   <!--<![endif]-->
+
+  <script type="text/javascript" src="//use.typekit.net/wjq1nyz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
   <?php print $scripts; ?>
 

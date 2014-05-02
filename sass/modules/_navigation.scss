@@ -6,6 +6,58 @@
 
 // Main menu
 #block-system-main-menu {
+
+	// Navtoggle
+	#navtoggle {
+	  @include breakpoint($bp-large, $no-query: true) {   
+	    display: none !important;
+	  }
+	}
+
+	// Menu
+	ul.menu {
+		font-family: $font-header;
+		font-size: em(14px);
+
+		@extend %resetlist;
+
+		li {
+			float: left;
+			margin-right: 1px;
+
+			// Active trail
+			&.active-trail {
+				a,
+				a:visited {
+					color: $orange-227;
+				}
+			}
+		}
+	}
+
+	// Links
+	a,
+	a:visited {
+		background: $gray-204;
+		border: 1px solid $gray-204;
+		border-bottom: none;
+  	color: $gray-140;
+  	display: block;
+  	font-weight: 700;
+  	padding: em(5px) em(20px);
+		text-decoration: none;
+
+		@include background-image(linear-gradient($white, $gray-204));
+
+		@include transition(color 0.15s ease-in-out);
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: $white;
+			color: $orange-227;
+		}
+	}
 }
 
 

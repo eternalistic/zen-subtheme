@@ -3,187 +3,47 @@
 //
 
 
-// Reset List
-.resetlist {
-	ul {
-		@extend %resetlist;
-	}
+// Element - Invisible
+.element-invisible {
+  @include element-invisible
 }
 
 
-// // Grid
-// a#gridtoggle {
-// 	display: block;
-// 	background: black;
-// 	color: white;
-// 	font-size: em(14px);
-// 	font-weight: 500;
-// 	text-align: center;
-// 	padding: em(10px);
-// 	position: fixed;
-// 	// top: 10px;
-// 	bottom: 10px;
-// 	right: 10px;
-// 	z-index: 901;
-// 	text-decoration: none;
-// }
-
-// #grid {
-// 	display: none;
-// 	width: 100%;
-// 	height: 100%;
-// 	position: fixed;
-// 	z-index: 900;
-// 	top: 0;
-// 	left: 0;
-
-// 	@include background-grid($color: red);
-// 	@include opacity(.5);
-// }
+// Element - Focusable
+.element-focusable {
+  @include element-focusable
+}
 
 
-// // Redline
-// .redline {
-// 	height: 1px;
-// 	border: none;
-// 	border-left: 1px solid red;
-// 	position: fixed;
-// 	top: 0;
-// 	width: 1px;
-// 	height: 100%;
-// 	z-index: 9999;
+// Skip link
+#skip-link {
+  margin: 0;
 
-// 	body.scrollable & {
-// 		// left: 741px;
-// 	}
-// }
-
-// // Redline - First
-// #redline-first {
-// 	left: 19px;
-
-// 	@include breakpoint($bp-small, $no-query: false) {
-// 		left: 12px;
-// 	}
-
-// 	@include breakpoint($bp-xxsmall, $no-query: false) {
-// 		left: 22px;
-// 	}
-
-// 	@include breakpoint($bp-medium, $no-query: false) {
-// 		left: 27px;
-// 	}
-
-// 	@include breakpoint($bp-large, $no-query: false) {
-// 		left: 27px;
-// 	}
-
-// 	@include breakpoint($bp-xlarge, $no-query: false) {
-// 		left: 89px;
-// 	}
-
-// 	@include breakpoint($bp-xxlarge, $no-query: false) {
-// 		left: 111px;
-// 	}
-
-// 	@include breakpoint($bp-xxxlarge, $no-query: false) {
-// 		left: 124px;
-// 	}
-
-// 	// Home
-// 	body.front & {
-// 		@include breakpoint($fence-medium_large, $no-query: false) {
-// 			left: 17px;
-// 		}
-
-// 		@include breakpoint($bp-xlarge, $no-query: false) {
-// 			left: 34px;
-// 		}
-
-// 		@include breakpoint($bp-xxlarge, $no-query: false) {
-// 			left: 86px;
-// 		}
-// 	}	
-// }
-
-// // Redline - Second
-// #redline-second {
-// 	left: 300px;
-
-// 	@include breakpoint($bp-small, $no-query: false) {
-// 		left: 249px;
-// 	}
-
-// 	@include breakpoint($bp-xxsmall, $no-query: false) {
-// 		left: 517px;
-// 	}
-
-// 	@include breakpoint($bp-medium, $no-query: false) {
-// 		left: 662px;
-// 	}
-
-// 	@include breakpoint($bp-large, $no-query: false) {
-// 		left: 768px;
-// 	}
-
-// 	@include breakpoint($bp-xlarge, $no-query: false) {
-// 		left: 387px;
-// 	}
-
-// 	@include breakpoint($bp-xxlarge, $no-query: false) {
-// 		left: 513px;
-// 	}
-
-// 	@include breakpoint($bp-xxxlarge, $no-query: false) {
-// 		left: 586px;
-// 	}
-
-// 	// Home
-// 	body.front & {
-// 		@include breakpoint($fence-medium_large, $no-query: false) {
-// 			left: 422px;
-// 		}
-
-// 		@include breakpoint($fence-large_xlarge, $no-query: false) {
-// 			left: 483px;
-// 		}
-
-// 		@include breakpoint($bp-xlarge, $no-query: false) {
-// 			left: 590px;
-// 		}
-
-// 		@include breakpoint($bp-xxlarge, $no-query: false) {
-// 			left: 419px;
-// 		}
-// 	}
-// }
+  a,
+  a:visited {
+    background-color: #666;
+    color: $white;
+    display: block;
+    padding: 2px 0 3px 0;
+    text-align: center;
+    width: 100%;
+  }
+}
 
 
-// // Redline - Navigation
-// #redline-nav {
-// 	background: red;
-// 	height: 1px;
-// 	left: 0;
-// 	position: fixed;
-// 	top: 57px;
-// 	width: 100%;
-// 	z-index: 99999;
-
-// 	@include breakpoint($bp-xsmall, $no-query: false) {
-// 		top: 57px;
-// 	}
-
-// 	@include breakpoint($bp-large, $no-query: true) {
-// 		top: 83px;
-// 	}
-
-// 	@include breakpoint($bp-xlarge, $no-query: false) {
-// 		top: 111px;
-// 	}
-// }
+// Clear
+.clear {
+  clear: both;
+}
 
 
-// // Remove scrollbars
-// html {
-// 	// overflow: hidden;
-// }
+// Clear fix
+.clearfix {
+  @extend %clearfix;
+}
+
+
+// Inline
+.inline {
+  @include inline-block-list;
+}

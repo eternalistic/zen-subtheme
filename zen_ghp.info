@@ -12,7 +12,7 @@
 ; page at admin/appearance.
 
 screenshot  = screenshot.png
-name        = Zen Sub-theme Starter Kit
+name        = Global Health Progress - Zen subtheme
 description = Customized by Eternalistic (@eternalistic)
 
 
@@ -82,12 +82,14 @@ scripts[] = js/build/production.min.js
 ; And you'll use this variable in maintenance-page.tpl.php:
 ;   <?php print $header_top; ?>
 
+regions[header_top]     = Header top
 regions[header]         = Header
 regions[navigation]     = Navigation bar
 regions[preface]    		= Preface
 regions[highlighted]    = Highlighted
 regions[help]           = Help
 regions[content]        = Content
+regions[content_bottom] = Content bottom
 regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar
 regions[postscript]     = Postscript

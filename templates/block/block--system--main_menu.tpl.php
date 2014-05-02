@@ -9,7 +9,7 @@
 ?>
 <div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
-	<a href="#main-menu" id="navtoggle">Navigation</a>
+	<a href="#main-menu" id="navtoggle">Menu</a>
 
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>

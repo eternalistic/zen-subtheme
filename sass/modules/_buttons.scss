@@ -4,25 +4,37 @@
 
 
 // Default button style
-a.button:link,
-a.button:visited,
-.form-submit {
-	border: none;
-	color: $white;
-	font-weight: $fw-reg;
-	line-height: 100%;
-	padding: em(15px) em(20px);
+// a.button,
+// .form-submit {
+// 	@extend %button;
 
-	&:hover,
-	&:focus,
-	&:active {
-	}
-}
+// 	&:hover,
+// 	&:focus,
+// 	&:active {
+// 	}
+// }
 
 
 // Submit
 .form-submit {
+	@extend %button;
+	@extend %button-primary;
+
+	border: none;
 	margin-right: em(10px);
 }
 
+
+// Button - Primary
+.button-primary {
+	@extend %button;
+	@extend %button-primary;
+}
+
+
+// Button - Secondary
+.button-secondary {
+	@extend %button;
+	@extend %button-secondary;
+}
 

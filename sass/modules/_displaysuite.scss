@@ -1,0 +1,40 @@
+//
+// Display suite
+//
+
+
+// Two column - Fluid
+.ds-2col-fluid {
+
+	// Left
+	> .group-left {
+		float: none;
+		width: 100%;
+
+		@include breakpoint($bp-medium, $no-query: false) {
+			float: left;
+			width: 48%;
+		}
+
+		@include breakpoint($bp-large, $no-query: true) {
+
+		}
+
+	}
+
+	// Right
+	.group-right {
+		float: none;
+		width: 100%;
+
+		@include breakpoint($bp-medium, $no-query: false) {
+			float: right;
+			width: 48%;
+		}
+
+		@include breakpoint($bp-large, $no-query: true) {
+
+		}
+	}
+}
+

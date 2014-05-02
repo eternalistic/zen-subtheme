@@ -6,7 +6,6 @@
 // Basic positioning styles shared by primary and secondary tabs.
 ul.primary,
 ul.secondary {
-  //@extend %clearfix;
   list-style: none;
   margin: 0 0 1em 0;
   padding: 0;
@@ -22,28 +21,44 @@ ul.secondary {
 
 // Primary
 ul.primary {
+  border: 1px solid #ccc;
+  margin-bottom: em(20px);
+
+  @include border-radius(3px);
+  @include cf;
+
+  @include breakpoint($bp-medium) {
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+
+    @include border-radius(0);
+  }
+
   li {
-    margin-bottom: .5em;
+    border-bottom: 1px solid #ccc;
 
     @include breakpoint($bp-medium) {
+      border-bottom: none;
       display: inline-block;
       margin-right: -5px;
     }
 
     &.active {
     }
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
   a:link,
   a:visited {
-    background: #f8f7f6;
-    @include background-image(linear-gradient(#f8f7f6, #e0dfdf));
-    border: 1px solid #bfbcba;
-    border-top: 1px solid #fcfbfb;
-    @include border-radius(3px);
-    color: #404040;
+    // color: $gray-163;
     display: block;
-    font-size: em(16px);
+    font-size: em(14px);
+    font-weight: 500;
     line-height: 100%;
     outline: none;
     padding: 10px 15px;
@@ -59,15 +74,25 @@ ul.primary {
     &:hover,
     &:focus,
     &.active {
-      background: #c5c4c3;
-      @include background-image(linear-gradient(#c5c4c3, #f8f7f6));
-      border: 1px solid #bcb9b8;
-      border-bottom: 1px solid #f2f2f1;
-      border-top: 1px solid #7a7978;
-      @include box-shadow(rgba(100, 184, 214, .9) 0 0 2px 2px);
-      
+      background: #ddd;
+      color: #404040;
+
       @include breakpoint($bp-medium) {
-        @include box-shadow(none);
+        background: transparent;
+      }
+    }
+
+    &.active {
+      background: #ddd;
+
+      @include breakpoint($bp-medium) {
+        background: transparent;
+        border: 1px solid #ccc;
+        border-bottom: 1px solid #fff;
+        margin-bottom: -2px;
+
+        @include border-top-radius(3px);
+
       }
     }
   }
@@ -104,6 +129,7 @@ ul.secondary {
     display: inline-block;
     font-size: em(16px);
     font-weight: bold;
+    letter-spacing: .04em;
     line-height: 100%;
     margin: 0 auto;
     outline: none;

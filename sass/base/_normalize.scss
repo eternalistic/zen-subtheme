@@ -86,9 +86,9 @@ body {
  */
 
 a,
-.nolink {
+a:visited {
   background: transparent;
-  font-weight: $fw-reg;
+  font-weight: 400;
   text-decoration: none;
   
   // Transitions
@@ -122,51 +122,46 @@ a:hover {
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
 
-h1 {
-  font-size: em(56px);
-  font-weight: $fw-ul;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
   line-height: 100%;
-  margin: 0 0 em(7px) 0;
+  font-family: $font-header;
 }
 
-h1#page-title,
-h2.page-title {
-  color: $gray-50;
-  font-size: em(30px);
-  letter-spacing: -.02em;
+h1 {
+  &#page-title {
+    font-size: em(36px);
+    margin: 0 0 20px 0;
+  }
 }
 
 h2 {
-  font-size: em(20px);
-  font-weight: $fw-ul;
-  line-height: 100%;
-  margin: 0 0 em(10px) 0;
+  font-size: em(24px);
+  margin: 0 0 5px 0;
 }
 
 h3 {
-  color: $gray-50;
-  font-size: em(18px);
-  font-weight: $fw-med;
-  margin: 0 0 em(3px) 0;
+  font-size: em(22px);
+  margin: 40px 0 5px 0;
 }
 
 h4 {
+  color: #879bba;
   font-size: em(16px);
-  font-weight: $fw-reg;
-  margin: 0 0 em(10px) 0;
+  margin: 50px 0 5px 0;
+  text-transform: uppercase;
 }
 
 h5 {
-  font-size: em(16px);
-  margin: 0 0 em(10px) 0;
+  font-size: em(18px);
 }
 
 h6 {
   font-size: em(16px);
-  margin: 0 0 em(10px) 0;
 }
 
 p {
+  line-height: 150%;
   margin: 0 0 em(18px) 0;
 }
 
@@ -184,7 +179,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: $fw-med;
+  font-weight: 700;
 }
 
 /**
@@ -200,9 +195,14 @@ dfn {
  */
 
 hr {
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    height: 0;
+  border: none;
+  border-bottom: 1px dotted $gray-150;
+  height: 2px;
+  margin: 1.5em 0;
+
+  &.minimal {
+    margin: .5em 0;
+  }
 }
 
 /**
@@ -481,7 +481,7 @@ table {
 
 blockquote {
   font-size: em(28px);
-  font-weight: $fw-med;
+  font-weight: 700;
   line-height: 100%;
   margin: 0 0 10px 15px;
 
@@ -528,7 +528,7 @@ cite {
   display: block;
   font-size: em(18px);
   font-style: normal;
-  font-weight: $fw-med;
+  font-weight: 700;
   margin-bottom: em(20px);
   margin-left: 15px;
 

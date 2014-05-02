@@ -7,7 +7,7 @@
  * @param $form_state
  *   A keyed array containing the current state of the form.
  */
-function zen_subtheme_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NULL)  {
+function zen_ghp_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NULL)  {
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
     return;
@@ -16,10 +16,10 @@ function zen_subtheme_form_system_theme_settings_alter(&$form, &$form_state, $fo
   // Create the form using Forms API: http://api.drupal.org/api/7
 
   /* -- Delete this line if you want to use this setting
-  $form['zen_subtheme_example'] = array(
+  $form['zen_ghp_example'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('STARTERKIT sample setting'),
-    '#default_value' => theme_get_setting('zen_subtheme_example'),
+    '#default_value' => theme_get_setting('zen_ghp_example'),
     '#description'   => t("This option doesn't do anything; it's just an example."),
   );
   // */
