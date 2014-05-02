@@ -29,11 +29,11 @@ function(){a.checkForEmpty()})};a.fadeOnFocus=function(){a.showing&&a.setOpacity
 
     // Check for SVG
     // Source: http://toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script/
-    if(!Modernizr.svg) {
-      $('img[src*="svg"]').attr('src', function() {
-          return $(this).attr('src').replace('.svg', '.png');
-      });
-    }
+    // if(!Modernizr.svg) {
+    //   $('img[src*="svg"]').attr('src', function() {
+    //       return $(this).attr('src').replace('.svg', '.png');
+    //   });
+    // }
 
 
 	// Nav toggle
@@ -49,11 +49,20 @@ function(){a.checkForEmpty()})};a.fadeOnFocus=function(){a.showing&&a.setOpacity
     });
 
 
-	// Infield label
+    // Add "infield" class to labels that are in fields
     $(function(){
 
-		// Contact us
-		$('#webform-client-form-17 label').inFieldLabels();
+        // Search block
+        // $('#block-search-form label').addClass('infield'); 
+
+    });
+
+
+    // Apply label inline function to labels with infield
+    $(function(){
+
+        // Infield
+        $('label.infield').inFieldLabels();
 
     });
 
