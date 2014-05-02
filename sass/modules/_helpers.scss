@@ -5,13 +5,13 @@
 
 // Element - Invisible
 .element-invisible {
-  @include element-invisible
+  @include element-invisible;
 }
 
 
 // Element - Focusable
 .element-focusable {
-  @include element-focusable
+  @include element-focusable;
 }
 
 

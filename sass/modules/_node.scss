@@ -23,37 +23,3 @@ h2.node-title {
 		text-decoration: none;
 	}
 }
-
-
-
-
-// Articles
-article {
-
-	// Promoted
-	&.node-promoted {
-
-		// Teaser
-		&.node-teaser {
-			border-bottom: 1px solid #ccc;
-			margin-bottom: em(20px);
-			padding-bottom: em(20px);
-
-			// Header
-			header {
-				margin-bottom: em(20px);
-			}
-
-			// Image
-			.field-name-field-image {
-				float: left;
-				margin: 0 em(20px) em(20px) 0;
-			}
-
-			// Read more
-			ul.links {
-				float: right;
-			}
-		}
-	}
-}

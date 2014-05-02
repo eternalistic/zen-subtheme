@@ -162,7 +162,7 @@ td.menu-disabled {
 
 // Textfield
 .form-text {
-  // background: $white-250;
+  background: $white;
   border: 1px solid $gray-100;
   color: $gray-150;
   max-width: 100%;
@@ -176,7 +176,7 @@ td.menu-disabled {
   &:focus {
     background: $white;
     border: 1px solid #57A9D9;
-    // color: $gray-70;
+    color: $gray-50;
     outline: none;
 
     @include box-shadow(
@@ -190,8 +190,8 @@ td.menu-disabled {
 
 // Text area
 .form-textarea {
-  // background: $white-250;
-  // border: 1px solid $gray-210;
+  background: $white;
+  border: 1px solid $gray-166;
   color: $gray-150;
   padding: em(15px);
   vertical-align: middle;
@@ -201,7 +201,6 @@ td.menu-disabled {
 
   &:focus {
     background: $white;
-    // border: 1px solid $blue-100;
-    // color: $gray-70;
+    color: $gray-100;
   }
 }

@@ -34,7 +34,6 @@ $base-line-height: 24px; // This line-height determines the basic unit of vertic
 $times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
 $times:           Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
 $georgia:         Georgia, "Times New Roman", "DejaVu Serif", serif;
-
 $verdana:         Verdana, Tahoma, "DejaVu Sans", sans-serif;
 $tahoma:          Tahoma, Verdana, "DejaVu Sans", sans-serif;
 $helvetica:       Helvetica, Arial, "Nimbus Sans L", sans-serif;
@@ -44,13 +43,9 @@ $arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
 $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
-// Typekit fonts
-$tisa: "ff-tisa-web-pro",serif;
-$proxima: "proxima-nova", sans-serif;
-
 // Default font styles
-$font-body: $tisa;
-$font-header: $proxima;
+$font-body: $verdana;
+$font-header: $georgia;
 
 // Now create some variables for the font stacks we want to use on this site.
 $base-font-family: $font-body; // The font family set on the html element.

@@ -111,12 +111,12 @@
 
 // Secondary
 %button-secondary {
-  @include rgba-background(rgba($white, .25));
+  background: orange;
 
   &:hover,
   &:focus,
   &:active {
-    @include rgba-background(rgba($white, .5));
+    background: blue;
   }
 }
 

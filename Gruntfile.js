@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
     // Theme path
-    $themepath = '/sites/all/themes/zen_ghp';
+    $themepath = '/sites/all/themes/zen_subtheme';
 
     // 1. All configuration goes here 
     grunt.initConfig({

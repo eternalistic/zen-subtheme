@@ -33,9 +33,6 @@
   <link type="text/css" rel="stylesheet" href="<?php print $base_path . $path_to_theme; ?>/css/styles.css" media="all" />
   <!--<![endif]-->
 
-  <script type="text/javascript" src="//use.typekit.net/wjq1nyz.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
   <?php print $scripts; ?>
 
 </head>
