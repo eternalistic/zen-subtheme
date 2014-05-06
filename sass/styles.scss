@@ -1,10 +1,29 @@
-// Partials
-@import "base/*";	
+// Base
+@import "base/_init.scss";
 
+// Variables
+@import "base/_breakpoint.scss";
+@import "base/_tweakpoint.scss";
+@import "base/_colors.scss";
+
+// Functions
+@import "base/_functions.scss";
+
+// Fonts
+@import "base/_fonts.scss";
+
+// Extends / Mixins
+@import "base/_extends.scss";
+@import "base/_mixins.scss";
+
+// Sprites / Normalize
+@import "base/_sprites.scss";
+@import "base/_normalize.scss";
 
 // Styling
 @import "layouts/*";															// Import layouts
 @import "modules/*";															// Import modules
+@import "nodes/*";																// Import nodes
 @import "pages/*";																// Import pages
 
 

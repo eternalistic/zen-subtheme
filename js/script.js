@@ -35,22 +35,22 @@
     });
 
 
-    // Add "infield" class to labels that are in fields
-    $(function(){
+    // Inline label
+    // $(function(){
 
-        // Search block
-        // $('#block-search-form label').addClass('infield'); 
-
-    });
+    //     // Search block
+    //     $('#block-search-form label').addClass('infield'); 
+        
+    // });
 
 
     // Apply label inline function to labels with infield
-    $(function(){
+    // $(function(){
 
-        // Infield
-        $('label.infield').inFieldLabels();
+    //     // Infield
+    //     $('label.infield').inFieldLabels();
 
-    });
+    // });
 
 
 })(jQuery, Drupal, this, this.document);
