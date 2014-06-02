@@ -8,6 +8,8 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-sass": "~0.7.1",
     "grunt-contrib-compass": "~0.7.1",
-    "grunt-imageoptim": "~1.4.1"
+    "grunt-imageoptim": "~1.4.1",
+    "grunt-svgmin": "~0.4.0",
+    "grunt-dr-svg-sprites": "~0.9.4"
   }
 }
