@@ -117,38 +117,44 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 100%;
   font-family: $font-header;
+  margin: 0;
 }
 
 h1 {
+
+  // Page title
   &#page-title {
-    font-size: em(36px);
-    margin: 0 0 20px 0;
+    margin-bottom: em(10px);
+
+    @include font-size(36);
   }
 }
 
 h2 {
-  font-size: em(24px);
-  margin: 0 0 5px 0;
+  margin-bottom: em(10px);
+
+  @include font-size(24);
 }
 
 h3 {
-  font-size: em(22px);
-  margin: 40px 0 5px 0;
+  margin-bottom: em(10px);
+
+  @include font-size(22);
 }
 
 h4 {
-  color: #879bba;
-  font-size: em(16px);
-  margin: 50px 0 5px 0;
+  margin-bottom: em(10px);
   text-transform: uppercase;
+
+  @include font-size(36);
 }
 
 h5 {
-  font-size: em(18px);
+  @include font-size(16);
 }
 
 h6 {
-  font-size: em(16px);
+  @include font-size(16);
 }
 
 p {
@@ -471,23 +477,26 @@ table {
    ========================================================================== */
 
 blockquote {
-  font-size: em(28px);
   font-weight: 700;
   line-height: 100%;
   margin: 0 0 10px 15px;
 
+  @include font-size(28);
+
   @include breakpoint($bp-medium, $no-query: true) {
-    font-size: em(38px);
     margin-left: 20px;
+
+    @include font-size(38);
   }
 
   @include breakpoint($bp-xlarge, $no-query: false) {
-    font-size: em(32px);
     margin-left: 25px;
+
+    @include font-size(32);
   }
 
   @include breakpoint($bp-xxlarge, $no-query: false) {
-    font-size: em(36px);
+    @include font-size(36);
   }
 
   p {
@@ -517,11 +526,12 @@ blockquote {
 
 cite {
   display: block;
-  font-size: em(18px);
   font-style: normal;
   font-weight: 700;
   margin-bottom: em(20px);
   margin-left: 15px;
+
+  @include font-size(18);
 
   @include breakpoint($bp-medium, $no-query: true) {
     margin-bottom: em(30px);
@@ -529,8 +539,9 @@ cite {
   }
 
   @include breakpoint($bp-xxlarge, $no-query: true) {
-    font-size: em(24px);
     margin-left: 25px;
+
+    @include font-size(24);
   }
 }
 

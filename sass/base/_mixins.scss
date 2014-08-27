@@ -55,3 +55,26 @@
     }
   }
 }
+
+
+// SVG background
+$image-path: '../images' !default;
+$fallback-extension: 'png' !default;
+$retina-suffix: '@2x';
+
+@mixin svg-bg($name, $dir) {
+  background-image: url(#{$image-path}/#{$dir}/svg/#{$name}.svg);
+  background-repeat: no-repeat;
+
+  // No SVG support
+  .no-svg & {
+    background-image: url(#{$image-path}/#{$dir}/#{$name}.#{$fallback-extension});
+  }
+}
+
+
+// Font size - Rem and PX fallback
+@mixin font-size($org) {
+  font-size: $org + px;
+  font-size: ($org/16) + rem;
+}

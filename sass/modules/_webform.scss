@@ -15,7 +15,8 @@
 	// Required
   .form-required {
   	color: $gray-150;
-  	font-size: em(10px);
+    
+  	@include font-size(10);
   }
 
   // Message

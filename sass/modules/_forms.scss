@@ -32,9 +32,11 @@
 
   .description { /* The descriptive help text (separate from the label) */
     display: block;
-    font-size: em(14px);
     padding-right: em(15px);
     padding-top: em(5px);
+
+
+    @include font-size(14);
   }
 
   .form-checkboxes & ,
