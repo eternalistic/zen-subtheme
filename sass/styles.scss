@@ -23,11 +23,14 @@
 // @import "_sprite-icons.scss";
 // @import "_sprite-icons-sprite.scss";
 
+
 // Styling
-@import "layouts/*";															// Import layouts
-@import "modules/*";															// Import modules
-@import "nodes/*";																// Import nodes
-@import "pages/*";																// Import pages
+@import "layout/*";																// Import layout
+@import "component/*";														// Import component
+@import "components/node/*";											// Import component/node
+@import "components/page/*";											// Import component/page
+@import "state/*";																// Import state
+@import "theme/*";																// Import theme
 
 
 // Print
