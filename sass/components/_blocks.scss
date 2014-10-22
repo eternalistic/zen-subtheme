@@ -11,5 +11,7 @@
 
 // Block title
 h2.block-title {
-	@include font-size(24);
+  margin-bottom: em(10px);
+
+  @include font-size(24);
 }

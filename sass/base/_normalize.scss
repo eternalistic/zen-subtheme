@@ -63,18 +63,16 @@ template {
  *    user zoom.
  */
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 html {
     font-family: sans-serif; /* 1 */
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
-}
-
-/**
- * Remove default margin.
- */
-
-body {
-    margin: 0;
 }
 
 /* ==========================================================================
@@ -87,17 +85,28 @@ body {
 
 a,
 a:visited {
-  color: $orange-227;
+
+  // Transition
+  @include transition-property(all);
+  @include transition-duration(.15s);
+  @include transition-timing-function(ease-in-out);
+
+  background: transparent;
   text-decoration: none;
-  
-  @include transition(all 0.15s ease-in-out);
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+  outline: 0;
 }
 
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
 
-a:focus,
 a:active,
 a:hover {
   outline: 0;
@@ -113,53 +122,51 @@ a:hover {
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+h1 {
   line-height: 100%;
-  font-family: $font-header;
-  margin: 0;
+  margin: 0 0 em(10px) 0;
+
+  @include font-size(56);
 }
 
-h1 {
-
-  // Page title
-  &#page-title {
-    margin-bottom: em(10px);
-
-    @include font-size(36);
-  }
+h1#page-title {
+  @include font-size(56);   
 }
 
 h2 {
-  margin-bottom: em(10px);
+  line-height: 100%;
+  margin: 0 0 em(10px) 0;
 
-  @include font-size(24);
+  @include font-size(20);   
 }
 
 h3 {
-  margin-bottom: em(10px);
+  font-weight: 700;
+  margin: 0 0 em(3px) 0;
 
-  @include font-size(22);
+  @include font-size(18);
 }
 
 h4 {
-  margin-bottom: em(10px);
-  text-transform: uppercase;
+  margin: 0 0 em(10px) 0;
 
-  @include font-size(36);
+  @include font-size(16);
 }
 
 h5 {
+  margin: 0 0 em(10px) 0;
+
   @include font-size(16);
 }
 
 h6 {
+  margin: 0 0 em(10px) 0;
+
   @include font-size(16);
 }
 
 p {
-  line-height: 150%;
-  margin: 0 0 em(18px) 0;
+  margin: 0 0 em(15px) 0;
 }
 
 /**
@@ -192,14 +199,14 @@ dfn {
  */
 
 hr {
-  border: none;
-  border-bottom: 1px dotted $gray-150;
-  height: 2px;
-  margin: 1.5em 0;
-
-  &.minimal {
-    margin: .5em 0;
-  }
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  height: 0;
+  margin-bottom: em(20px);
+  margin-top: em(20px);
+    
+  @extend %horizontalrule;
 }
 
 /**
@@ -467,84 +474,21 @@ table {
 }
 
 
-
-
-
-
-
 /* ==========================================================================
    Blockquote
    ========================================================================== */
 
 blockquote {
-  font-weight: 700;
   line-height: 100%;
   margin: 0 0 10px 15px;
 
   @include font-size(28);
-
-  @include breakpoint($bp-medium, $no-query: true) {
-    margin-left: 20px;
-
-    @include font-size(38);
-  }
-
-  @include breakpoint($bp-xlarge, $no-query: false) {
-    margin-left: 25px;
-
-    @include font-size(32);
-  }
-
-  @include breakpoint($bp-xxlarge, $no-query: false) {
-    @include font-size(36);
-  }
-
-  p {
-    &:before {
-      content: "\201C";
-      margin-left: -15px;
-      position: absolute;
-
-      @include breakpoint($bp-medium, $no-query: true) {
-        margin-left: -20px;
-      }
-
-      @include breakpoint($bp-xlarge, $no-query: false) {
-        margin-left: -25px;
-      }
-    }
-
-    &:after {
-      content: "\201D";
-    }
-  }
-
-  p:last-child {
-    margin-bottom: 0;
-  }
 }
 
-cite {
-  display: block;
-  font-style: normal;
-  font-weight: 700;
-  margin-bottom: em(20px);
-  margin-left: 15px;
 
-  @include font-size(18);
-
-  @include breakpoint($bp-medium, $no-query: true) {
-    margin-bottom: em(30px);
-    margin-left: 20px;
-  }
-
-  @include breakpoint($bp-xxlarge, $no-query: true) {
-    margin-left: 25px;
-
-    @include font-size(24);
-  }
-}
-
+/* ==========================================================================
+   Selection
+   ========================================================================== */
 
 // Selection
 ::-moz-selection {

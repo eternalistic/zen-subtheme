@@ -4,37 +4,28 @@
 
 
 // Default button style
-// a.button,
-// .form-submit {
-// 	@extend %button;
-
-// 	&:hover,
-// 	&:focus,
-// 	&:active {
-// 	}
-// }
-
-
-// Submit
+a.button:link,
+a.button:visited,
 .form-submit {
-	@extend %button;
-	@extend %button-primary;
+  @extend %button;
 
-	border: none;
-	margin-right: em(10px);
+  &:hover,
+  &:focus,
+  &:active {
+  }
 }
 
 
 // Button - Primary
 .button-primary {
-	@extend %button;
-	@extend %button-primary;
+  @extend %button;
+  @extend %button-primary;
 }
 
 
 // Button - Secondary
 .button-secondary {
-	@extend %button;
-	@extend %button-secondary;
+  @extend %button;
+  @extend %button-secondary;
 }
 

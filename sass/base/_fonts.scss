@@ -11,8 +11,9 @@
 // use in the normalize.scss file.
 // @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
 
-$base-font-size:   16px; // The font size set on the root html element.
-$base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
+$base__font-size_integer:   16;
+$base__font-size:           16px;
+$base__line-height:         24px; // This line-height determines the basic unit of vertical rhythm.
 
 // Letter spacing
 // 1 =1/1000 em
@@ -34,6 +35,7 @@ $base-line-height: 24px; // This line-height determines the basic unit of vertic
 $times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
 $times:           Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
 $georgia:         Georgia, "Times New Roman", "DejaVu Serif", serif;
+
 $verdana:         Verdana, Tahoma, "DejaVu Sans", sans-serif;
 $tahoma:          Tahoma, Verdana, "DejaVu Sans", sans-serif;
 $helvetica:       Helvetica, Arial, "Nimbus Sans L", sans-serif;
@@ -43,9 +45,9 @@ $arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
 $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
-// Default font styles
-$font-body: $verdana;
-$font-header: $georgia;
+// Web Fonts
+// $font-body:      "ag-book", sans-serif;
+$font-body:       $helvetica;
 
 // Now create some variables for the font stacks we want to use on this site.
 $base-font-family: $font-body; // The font family set on the html element.

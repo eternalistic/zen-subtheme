@@ -18,7 +18,7 @@
     a[href]:after { /* Add visible URL after links. */
       content: " (" attr(href) ")";
       font-weight: normal;
-      font-size: $base-font-size;
+      font-size: $base__font-size;
     }
 
     a[href^="javascript:"]:after,
@@ -46,10 +46,6 @@
     background-color: transparent !important;
     background-image: none !important;
     color: #000;
-
-	  @include box-shadow (
-	    none
-	  );
   }
 
   #skip-link,
@@ -66,9 +62,7 @@
   .forum-topic-navigation,
   .pager,
   .feed-icons,
-  .region-postscript-bottom,
   #header,
-  #header-top,
   .section-divider,
   .sidebars {
     display: none;
@@ -76,11 +70,10 @@
   }
 
   #content {
-  	overflow: hidden;
+    overflow: hidden;
   }
 
-  h1#page-title,
-  caption {
+  h1#page-title {
     color: #000;
   }
 }

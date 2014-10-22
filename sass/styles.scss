@@ -1,20 +1,53 @@
 // Base
-@import "base/_init.scss";
+
+
+// Add Compass' IE and vendor prefix support variables.
+// + http://compass-style.org/reference/compass/support
+@import "compass/support";
+
+// Add Compass' cross-browser mixins for CSS properties
+// + http://compass-style.org/reference/compass/css3/
+@import "compass/css3";
+
+// Breakpoint
+// Really Simple Media Queries with Sass
+// + https://github.com/at-import/breakpoint/
+@import "breakpoint";
+
+// Singularity
+// Grids Without Limits
+// + https://github.com/at-import/Singularity
+@import "singularitygs";
+
+// Toolkit 
+// Progressive Enhancement? Simple. Responsive Web Design? Done. Design in Browser? Beautiful.
+// + https://github.com/at-import/toolkit
+@import "toolkit";
+@import "toolkit/kickstart";
+
+// rgbapng
+// Cross-browser compatible RGBA support
+// + https://github.com/aaronrussell/compass-rgbapng
+@import "rgbapng";
+
+
+//========================================//
+
 
 // Variables
 @import "base/_breakpoint.scss";
 @import "base/_tweakpoint.scss";
 @import "base/_colors.scss";
 
-// Functions
-@import "base/_functions.scss";
-
 // Fonts
 @import "base/_fonts.scss";
 
-// Extends / Mixins
-@import "base/_extends.scss";
+// Functions
+@import "base/_functions.scss";
+
+// Mixins / Extends
 @import "base/_mixins.scss";
+@import "base/_extends.scss";
 
 // Normalize
 @import "base/_normalize.scss";
@@ -23,15 +56,10 @@
 // @import "_sprite-icons.scss";
 // @import "_sprite-icons-sprite.scss";
 
-
 // Styling
-@import "layout/*";																// Import layout
-@import "components/*";														// Import component
-// @import "components/node/*";											// Import component/node
-// @import "components/page/*";											// Import component/page
-// @import "state/*";																// Import state
-@import "theme/*";																// Import theme
-
+@import "layout/*";                                 // Import layouts
+@import "components/*";                             // Import components
+@import "theme/*";                                  // Import theme
 
 // Print
-@import "print/*";	
+@import "print/*";  

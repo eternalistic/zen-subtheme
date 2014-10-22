@@ -6,18 +6,35 @@
 // Sidebar first
 .sidebar-first {
 
-	// Content
+  // Content
   #content {
-	  @include breakpoint($bp-large, $no-query: true) {   
-	    @include grid-span(9, 4);
-	  }
+    margin-bottom: em(20px);
+
+    @include breakpoint($bp-medium, $no-query: true) {   
+      @include grid-span(6, 3);
+
+      margin-bottom: 0;
+    }
+
+    @include breakpoint($bp-large, $no-query: true) {   
+      @include grid-span(9, 4);
+    }
   }
 
-	// Sidebar first
-  .region-sidebar-first {
-	  @include breakpoint($bp-large, $no-query: true) {   
-	    @include grid-span(3, 1);
-	  }
+  // Sidebar first
+  #sidebar-first {
+    @include breakpoint($bp-medium, $no-query: false) {   
+      @include grid-span(2, 1);
+    }
+
+    @include breakpoint($bp-large, $no-query: true) {   
+      @include grid-span(3, 1);
+    }
+  }
+
+  // Sidebar second
+  #sidebar-second {
+    display: none;
   }
 }
 
@@ -25,18 +42,35 @@
 // Sidebar second
 .sidebar-second {
 
-	// Content
+  // Content
   #content {
-	  @include breakpoint($bp-large, $no-query: true) {   
-	    @include grid-span(9, 1);
-	  }
+    margin-bottom: em(20px);
+
+    @include breakpoint($bp-medium, $no-query: true) {   
+      @include grid-span(6, 1);
+
+      margin-bottom: 0;
+    }
+
+    @include breakpoint($bp-large, $no-query: true) {   
+      @include grid-span(9, 1);
+    }
   }
 
-	// Sidebar second
-  .region-sidebar-second {
-	  @include breakpoint($bp-large, $no-query: true) {   
-	    @include grid-span(3, 10);
-	  }
+  // Sidebar first
+  #sidebar-first {
+    display: none;
+  }
+
+  // Sidebar second
+  #sidebar-second {
+    @include breakpoint($bp-medium, $no-query: false) {   
+      @include grid-span(2, 7);
+    }
+
+    @include breakpoint($bp-large, $no-query: true) {   
+      @include grid-span(3, 10);
+    }
   }
 }
 
@@ -44,24 +78,42 @@
 // Two sidebars
 .two-sidebars {
 
-	// Content
+  // Content
   #content {
-	  @include breakpoint($bp-large, $no-query: true) {   
-	    @include grid-span(6, 4);
-	  }
+    margin-bottom: em(20px);
+
+    @include breakpoint($bp-medium, $no-query: true) {   
+      @include grid-span(5, 4);
+    }
+
+    @include breakpoint($bp-large, $no-query: true) {   
+      @include grid-span(6, 4);
+      
+      margin-bottom: 0;
+    }
   }
 
   // Sidebar first
-  .region-sidebar-first {
-	  @include breakpoint($bp-large, $no-query: true) {   
-	    @include grid-span(3, 1);
-	  }
+  #sidebar-first {
+    margin-bottom: em(20px);
+
+    @include breakpoint($bp-medium, $no-query: true) {   
+      @include grid-span(3, 1);
+
+      margin-bottom: 0;
+    }
+
+    @include breakpoint($bp-large, $no-query: true) {   
+      @include grid-span(3, 1);
+    }
   }
 
   // Sidebar second
-  .region-sidebar-second {
-	  @include breakpoint($bp-large, $no-query: true) {   
-	    @include grid-span(3, 10);
-	  }
+  #sidebar-second {
+    clear: both;
+    
+    @include breakpoint($bp-large, $no-query: true) {   
+      @include grid-span(3, 10);
+    }
   }
 }

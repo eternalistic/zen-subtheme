@@ -29,8 +29,9 @@
   background-color: transparent;
   border: 0;
   overflow: hidden;
-  /* IE 6/7 fallback */
-  *text-indent: -9999px;
+
+  // IE 6/7 fallback
+  *text-indent: -9999em;
 
   &:before {
     content: "";
@@ -43,14 +44,12 @@
 
 // Vertical align
 %vertical-align {
+  
+  // Transform
+  @include transform(translateY(-50%));
+
   position: relative;
   top: 50%;
-
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 
@@ -59,35 +58,27 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
-  padding-left: em(30px);
-  padding-right: em(30px);
-  // padding-left: column-span(.5, 1, $gutter: 0);
-  // padding-right: column-span(.5, 1, $gutter: 0);
-
-  @include breakpoint($bp-xlarge, $no-query: true) {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
 
 
-
+// Buttons
 %button {
+  @include border-radius(5px);
+  @include box-shadow(0 -3px 0 rgba($black, .25) inset);
+
+  // Transition
+  @include transition-property(background);
+  @include transition-duration(.3s);
+  @include transition-timing-function(ease-in-out);
+
   color: $white;
   display: inline-block;
   font-weight: 700;
   letter-spacing: .02em;
   line-height: 100%;
-  margin-right: em(10px);
-  padding: em(20px) em(20px);
+  padding: em(10px) em(20px);
   text-decoration: none;
   white-space: nowrap;
-  
-  @include border-radius(5px);
-  @include box-shadow(
-    0 -3px 0 rgba($black, .25) inset
-  );
-  @include transition(all 0.15s ease-in-out);
 
   &:hover,
   &:focus,
@@ -97,7 +88,7 @@
 }
 
 
-// Primary
+// Button - Primary
 %button-primary {
   background: #f47d43;
 
@@ -109,15 +100,28 @@
 }
 
 
-// Secondary
+// Button - Secondary
 %button-secondary {
-  background: orange;
+  @include rgba-background(rgba(green, .5));
 
   &:hover,
   &:focus,
   &:active {
-    background: blue;
+    @include rgba-background(rgba(green, .75));
   }
 }
 
 
+// Regions
+%region {
+  background: #e8e8e8;
+  padding: em(10px);
+}
+
+
+// Horizontal rule
+%horizontalrule {
+  @include box-shadow(0px 1px 0px 0px rgba($white, .75));
+
+  border-bottom: 1px solid #ccc;
+}
