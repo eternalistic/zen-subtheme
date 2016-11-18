@@ -1,119 +1,84 @@
 //
-// Layout
+// Layout.
 //
 
+// Container.
+.layout-container {
+  @include container();
+  @include wrapper;
+}
 
-// Sidebar first
+// Sidebar first.
 .sidebar-first {
 
-  // Content
-  #content {
-    margin-bottom: em(20px);
+  // Content.
+  .main-content {
 
-    @include breakpoint($bp-medium, $no-query: true) {   
-      @include grid-span(6, 3);
-
-      margin-bottom: 0;
-    }
-
-    @include breakpoint($bp-large, $no-query: true) {   
-      @include grid-span(9, 4);
+    // Medium +.
+    @include breakpoint($bp-medium-up) {
+      @include span(9 last);
     }
   }
 
-  // Sidebar first
-  #sidebar-first {
-    @include breakpoint($bp-medium, $no-query: false) {   
-      @include grid-span(2, 1);
-    }
+  // Sidebar first.
+  .region-sidebar-first {
 
-    @include breakpoint($bp-large, $no-query: true) {   
-      @include grid-span(3, 1);
+    // Medium +.
+    @include breakpoint($bp-medium-up) {
+      @include span(3);
     }
-  }
-
-  // Sidebar second
-  #sidebar-second {
-    display: none;
   }
 }
 
-
-// Sidebar second
+// Sidebar second.
 .sidebar-second {
 
-  // Content
-  #content {
-    margin-bottom: em(20px);
+  // Content.
+  .main-content {
 
-    @include breakpoint($bp-medium, $no-query: true) {   
-      @include grid-span(6, 1);
-
-      margin-bottom: 0;
-    }
-
-    @include breakpoint($bp-large, $no-query: true) {   
-      @include grid-span(9, 1);
+    // Medium +.
+    @include breakpoint($bp-medium-up) {
+      @include span(9);
     }
   }
 
-  // Sidebar first
-  #sidebar-first {
-    display: none;
-  }
+  // Sidebar second.
+  .region-sidebar-second {
 
-  // Sidebar second
-  #sidebar-second {
-    @include breakpoint($bp-medium, $no-query: false) {   
-      @include grid-span(2, 7);
-    }
-
-    @include breakpoint($bp-large, $no-query: true) {   
-      @include grid-span(3, 10);
+    // Medium +.
+    @include breakpoint($bp-medium-up) {
+      @include span(3 last);
     }
   }
 }
 
-
-// Two sidebars
+// Two sidebars.
 .two-sidebars {
 
-  // Content
-  #content {
-    margin-bottom: em(20px);
+  // Content.
+  .main-content {
 
-    @include breakpoint($bp-medium, $no-query: true) {   
-      @include grid-span(5, 4);
-    }
-
-    @include breakpoint($bp-large, $no-query: true) {   
-      @include grid-span(6, 4);
-      
-      margin-bottom: 0;
+    // Medium +.
+    @include breakpoint($bp-medium-up) {
+      @include span(6 at 4 isolate);
     }
   }
 
-  // Sidebar first
-  #sidebar-first {
-    margin-bottom: em(20px);
+  // Sidebar first.
+  .region-sidebar-first {
 
-    @include breakpoint($bp-medium, $no-query: true) {   
-      @include grid-span(3, 1);
-
-      margin-bottom: 0;
-    }
-
-    @include breakpoint($bp-large, $no-query: true) {   
-      @include grid-span(3, 1);
+    // Medium +.
+    @include breakpoint($bp-medium-up) {
+      @include span(3);
     }
   }
 
-  // Sidebar second
-  #sidebar-second {
-    clear: both;
-    
-    @include breakpoint($bp-large, $no-query: true) {   
-      @include grid-span(3, 10);
+  // Sidebar second.
+  .region-sidebar-second {
+
+    // Medium +.
+    @include breakpoint($bp-medium-up) {
+      @include span(3 last);
     }
   }
 }

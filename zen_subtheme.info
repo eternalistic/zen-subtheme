@@ -63,7 +63,7 @@ stylesheets[all][] = system.menus.css
 
 
 ; Optionally add some JavaScripts to your theme.
-scripts[] = js/build/production.min.js
+scripts[] = js/script.js
 
 
 

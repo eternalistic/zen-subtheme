@@ -1,0 +1,21 @@
+//
+// Functions.
+//
+
+// Function for converting a px based font-size to rem.
+@function rem($size) {
+  $remSize: $size / $base-font-size;
+  // Default font size on html element is 100%, equivalent to rem(16px);
+  @return #{$remSize}rem;
+}
+
+// Function for converting tracking in PSD to ems in CSS letter-spacing
+@function tracking($size) {
+  $trackingSize: $size / 1000;
+  @return #{$trackingSize}em;
+}
+
+// Strip units.
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}

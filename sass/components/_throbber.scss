@@ -1,31 +1,32 @@
 //
-// Throbber
+// Throbber.
 //
 
-
-// // Wheel
+// Wheel.
 // $wheel_size: 		16px;
 
-// /* these apply to auto-completing form fields */
+// Auto-completing form fields.
 // html.js input.form-autocomplete {
-//   background-image: url(../images/wheel.gif); /* tweak this according to your gif */
-//   background-position: 100% 0; /* tweak this according to your gif */
+//   background-image: url(../images/wheel.gif);
+//   background-position: 100% 0;
 //   background-repeat: no-repeat;
 // }
+//
 // html.js input.throbbing {
-//   background-position: 0 0; /* tweak this according to your gif */
+//   background-position: 0 0;
 // }
- 
-// /* these apply to all ajax progresses */
+
+// AJAX progresses.
 // .ajax-progress {
 //   display: inline-block;
 //   *display: inline;
 //   *zoom: 1;
 // }
+//
 // .ajax-progress .throbber {
-//   background: transparent url(../images/wheel.gif) no-repeat 0 0; /* tweak this according to your gif */
+//   background: transparent url(../images/wheel.gif) no-repeat 0 0;
 //   float: left;
-//   height: $wheel_size; /* tweak this according to your gif */
-//   width: $wheel_size; /* tweak this according to your gif */
+//   height: $wheel_size;
 //   margin: 0 0 -4px 8px;
+//   width: $wheel_size;
 // }

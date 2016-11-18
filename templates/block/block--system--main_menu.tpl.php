@@ -50,20 +50,14 @@
 
 <?php $tag = $block->subject ? 'section' : 'div'; ?>
 <<?php print $tag; ?> id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-
-  <?php if ($title): ?>
-  	<header>
-	    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
-		</header>
-	<?php endif; ?>
-  <?php print render($title_suffix); ?>
-
-  <div id="navigation" role="navigation">
-
-		<div class="block-content">
-		  <?php print $content; ?>
-		</div>
-
-  </div><!-- /#navigation -->
-	
+  <a id="nav__toggle" href="#" aria-hidden="true"><span>Menu</span></a>
+  <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation" class="block block-menu navigation menu--main">
+    <?php if ($title): ?>
+      <header>
+        <h2 class="visually-hidden"><?php print $title; ?></h2>
+      </header>
+    <?php endif; ?>
+    <?php print render($title_suffix); ?>
+    <?php print $content; ?>
+  </nav>
 </<?php print $tag; ?>>

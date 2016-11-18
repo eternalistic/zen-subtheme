@@ -1,89 +1,11 @@
 //
-// Page
+// Page.
 //
 
-
-// HTML
-html {
-}
-
-
-// Body
 body {
-  @include font-size($base__font-size_integer);
 
-  background: $white;
-  color: $black;
-  font-family: $font-body;
-  line-height: ($base__line-height/$base__font-size);
-}
-
-
-// Page
-#page {
-}
-
-
-// Header
-#header {
-}
-
-
-// Logo wrapper
-#header-logo {
-}
-
-
-// Header region
-.region-header {
-}
-
-
-// Logo
-#logo {
-}
-
-
-// Navigation
-.region-navigation {
-}
-
-
-// Region - Navigation
-.region-navigation {
-}
-
-
-// Preface
-#preface {
-}
-
-
-// Region - Preface
-.region-preface {
-}
-
-
-// Main
-#main {
-}
-
-
-// Content
-#content {
-}
-
-
-// Sidebar first
-.region-sidebar-first {
-}
-
-
-// Sidebar second
-.region-sidebar-second {
-}
-
-
-// Footer
-#footer {
+  // Navigation expanded.
+  &.is-navigation-expanded {
+    position: fixed;
+  }
 }

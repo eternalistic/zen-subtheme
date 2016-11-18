@@ -1,16 +1,18 @@
 //
-// Grid
-// + https://github.com/at-import/Singularity/wiki/Creating-Grids
+// Susy grid.
+//
 
-
-// Grid
-@include add-grid(3);
-@include add-grid(6 at $bp-small);
-@include add-grid(9 at $bp-medium);
-@include add-grid(12 at $bp-large);
-
-
-// Gutter
-@include add-gutter(1/4);
-
-// @include add-gutter(.25 at $bp-medium);
+$susy: (
+  global-box-sizing: border-box,
+  use-custom: (rem: true),
+  columns: 12,
+  gutters: 1,
+  container: 1120px,
+  container-position: center,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: overlay,
+    toggle: top right,
+  )
+);

@@ -1,7 +1,6 @@
 //
-// Tabs
+// Tabs.
 //
-
 
 // Basic positioning styles shared by primary and secondary tabs.
 ul.primary,
@@ -18,22 +17,19 @@ ul.secondary {
   }
 }
 
-
 // Primary
 ul.primary {
-  @include border-radius(3px);
   @include clearfix;
-
+  border-radius: 3px;
   border: 1px solid #ccc;
   margin-bottom: em(20px);
 
   @include breakpoint($bp-medium) {
     border-bottom: 1px solid #ccc;
     border-left: none;
+    border-radius: 0;
     border-right: none;
     border-top: none;
-
-    @include border-radius(0);
   }
 
   li {
@@ -56,7 +52,6 @@ ul.primary {
   a,
   a:visited {
     @include font-size(14);
-
     display: block;
     font-weight: 500;
     line-height: 100%;
@@ -64,7 +59,7 @@ ul.primary {
     padding: 10px 15px;
     text-align: center;
     text-decoration: none;
-    text-shadow: 0 1px 1px white;
+    text-shadow: 0 1px 1px #fff;
 
     @include breakpoint($bp-medium) {
       display: inline-block;
@@ -86,8 +81,7 @@ ul.primary {
       background: #ddd;
 
       @include breakpoint($bp-medium) {
-        @include border-top-radius(3px);
-
+        border-top-radius: 3px;
         background: transparent;
         border: 1px solid #ccc;
         border-bottom: 1px solid #fff;
@@ -114,15 +108,15 @@ ul.secondary {
     }
   }
 
+  // Links.
   a,
   a:visited {
-    background: #f8f7f6;
-    @include background-image(linear-gradient(#f8f7f6, #e0dfdf));
-    @include border-radius(3px);
     @include font-size(16);
-
-    border: 1px solid #bfbcba;
+    background: #f8f7f6;
+    background: linear-gradient(#f8f7f6, #e0dfdf);
+    border-radius: 3px;
     border-top: 1px solid #fcfbfb;
+    border: 1px solid #bfbcba;
     color: #404040;
     display: inline-block;
     font-weight: bold;
@@ -135,15 +129,15 @@ ul.secondary {
     text-decoration: none;
     text-shadow: 0 1px 1px white;
 
+    // Hover, active, and focus.
     &:hover,
     &:focus,
     &.active {
       background: #c5c4c3;
-      @include background-image(linear-gradient(#c5c4c3, #f8f7f6));
-      
-      border: 1px solid #bcb9b8;
+      background: linear-gradient(#c5c4c3, #f8f7f6);
       border-bottom: 1px solid #f2f2f1;
       border-top: 1px solid #7a7978;
+      border: 1px solid #bcb9b8;
     }
   }
 }

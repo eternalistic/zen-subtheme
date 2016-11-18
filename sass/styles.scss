@@ -1,65 +1,57 @@
-// Base
+//
+// Base.
+//
 
-
-// Add Compass' IE and vendor prefix support variables.
-// + http://compass-style.org/reference/compass/support
-@import "compass/support";
-
-// Add Compass' cross-browser mixins for CSS properties
-// + http://compass-style.org/reference/compass/css3/
-@import "compass/css3";
-
-// Breakpoint
-// Really Simple Media Queries with Sass
-// + https://github.com/at-import/breakpoint/
-@import "breakpoint";
-
-// Singularity
-// Grids Without Limits
-// + https://github.com/at-import/Singularity
-@import "singularitygs";
-
-// Toolkit 
-// Progressive Enhancement? Simple. Responsive Web Design? Done. Design in Browser? Beautiful.
-// + https://github.com/at-import/toolkit
-@import "toolkit";
-@import "toolkit/kickstart";
-
-// rgbapng
-// Cross-browser compatible RGBA support
-// + https://github.com/aaronrussell/compass-rgbapng
-@import "rgbapng";
-
-
+// NPM components.
 //========================================//
 
+// Susy.
+// Your markup, your design, your opinions | Our math.
+// http://susy.oddbird.net
+@import "../node_modules/susy/sass/_susy.scss";
 
-// Variables
+// Breakpoint.
+// Really Simple Media Queries with Sass.
+// + https://github.com/at-import/breakpoint
+@import "../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+
+// Toolkit.
+// Progressive Enhancement? Simple. Responsive Web Design? Done. Design in
+// Browser? Beautiful.
+// + https://github.com/at-import/toolkit
+@import "../node_modules/sass-toolkit/stylesheets/toolkit/_kickstart.scss";
+@import "../node_modules/sass-toolkit/stylesheets/toolkit/_clearfix.scss";
+
+// Styling.
+//========================================//
+
+// Functions.
+@import "utilities/_functions.scss";
+
+// Variables.
 @import "base/_breakpoint.scss";
-@import "base/_tweakpoint.scss";
 @import "base/_colors.scss";
 
-// Fonts
+// Typography.
 @import "base/_fonts.scss";
 
-// Functions
-@import "base/_functions.scss";
+// Utilities.
+@import "utilities/_mixins.scss";
 
-// Mixins / Extends
-@import "base/_mixins.scss";
-@import "base/_extends.scss";
+// Normalize.
+@import "base/normalize/_normalize.scss";
 
-// Normalize
-@import "base/_normalize.scss";
+// Helpers.
+@import "utilities/_helpers.scss";
 
-// Sprites
-// @import "_sprite-icons.scss";
-// @import "_sprite-icons-sprite.scss";
+// Import theme.
+@import "theme/*";
 
-// Styling
-@import "layout/*";                                 // Import layouts
-@import "components/*";                             // Import components
-@import "theme/*";                                  // Import theme
+// Import layouts.
+@import "layout/*";
 
-// Print
-@import "print/*";  
+// Import components.
+@import "components/*";
+
+// Print.
+@import "print/*";

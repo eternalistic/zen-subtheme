@@ -1,19 +1,25 @@
 {
-  "name": "zen_subtheme",
-  "version": "0.1.0",
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.3.2",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-sass": "~0.7.1",
-    "grunt-contrib-compass": "~0.7.1",
-    "grunt-imageoptim": "~1.4.1",
-    "grunt-svgmin": "~0.4.0",
-    "grunt-dr-svg-sprites": "~0.9.4",
-    "grunt-spritesmith": "~2.20.0"
-  },
+  "name": "lf-gulp-dependencies",
+  "version": "1.0.0",
+  "description": "Linux Foundation Gulp Dependencies",
+  "main": "gulpfile.js",
   "scripts": {
-    "postinstall": "find node_modules/ -name \"*.info\" -type f -delete"
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  },
+  "author": "Jeremy Caldwell",
+  "homepage": "http://www.eternalistic.net",
+  "dependencies": {
+    "breakpoint-sass": "^2.7.0",
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "~3.1.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.1.0",
+    "gulp-sass-glob": "0.0.2",
+    "imagemin-pngquant": "^4.2.0",
+    "sass-toolkit": "^2.10.0",
+    "susy": "^2.2.12"
   }
 }

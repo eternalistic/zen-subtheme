@@ -8,34 +8,34 @@
  */
 ?>
 
-<div id="page">
+<div class="layout-container">
 
   <header id="header" role="banner">
-    <div class="inner clearfix">
+    <div class="inner">
 
       <?php if ($logo): ?>
-        <div id="header-logo">
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo">
-            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" />
+        <div class="header-logo">
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header-logo__link">
+            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header-logo__image" />
           </a>
         </div>
       <?php endif; ?>
 
       <?php if ($site_name || $site_slogan): ?>
-        <div class="header__name-and-slogan" id="name-and-slogan">
+        <div class="header-name-and-slogan">
           <?php if ($site_name): ?>
-            <h1 class="header__site-name" id="site-name">
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="header__site-link" rel="home"><span><?php print $site_name; ?></span></a>
+            <h1 class="header-name-and-slogan__name">
+              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="header-name-and-slogan__site-link" rel="home"><span><?php print $site_name; ?></span></a>
             </h1>
           <?php endif; ?>
 
           <?php if ($site_slogan): ?>
-            <div class="header__site-slogan" id="site-slogan"><?php print $site_slogan; ?></div>
+            <div class="header-name-and-slogan__slogan"><?php print $site_slogan; ?></div>
           <?php endif; ?>
         </div>
       <?php endif; ?>
 
-      <?php print render($page['header']); ?> 
+      <?php print render($page['header']); ?>
       <?php print render($page['navigation']); ?>
 
     </div><!-- /.inner -->
@@ -45,8 +45,8 @@
   <?php print render($page['preface']); ?>
 
   <div id="main">
-    <div class="inner main-inner clearfix">
-      <div id="content" role="main">
+    <div class="inner">
+      <div class="main-content" role="main">
         <?php print render($page['highlighted']); ?>
         <?php print $breadcrumb; ?>
         <a id="main-content"></a>
@@ -54,7 +54,7 @@
         <?php if(isset($node) && !$is_front): ?>
           <?php print render($title_prefix); ?>
           <?php if ($title): ?>
-            <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
+            <h1 class="page__title title"><?php print $title; ?></h1>
           <?php endif; ?>
           <?php print render($title_suffix); ?>
         <?php endif; ?>
@@ -72,15 +72,24 @@
 
       <?php
         // Render the sidebars to see if there's anything in them.
-        $sidebar_first  = render($page['sidebar_first']);
+        $sidebar_first  = '' . render($page['sidebar_first']) . '';
         $sidebar_second = render($page['sidebar_second']);
       ?>
 
       <?php if ($sidebar_first || $sidebar_second): ?>
-        <aside class="sidebars">
-          <?php print $sidebar_first; ?>
-          <?php print $sidebar_second; ?>
-        </aside><!-- /.sidebars -->
+        <div class="sidebars">
+          <?php if ($sidebar_first): ?>
+            <aside class="region-sidebar-first" role="complementary">
+              <?php print $sidebar_first; ?>
+            </aside>
+          <?php endif; ?>
+
+          <?php if ($sidebar_second): ?>
+            <aside class="region-sidebar-second" role="complementary">
+              <?php print $sidebar_second; ?>
+            </aside>
+          <?php endif; ?>
+        </div>
       <?php endif; ?>
 
     </div><!-- /.inner -->

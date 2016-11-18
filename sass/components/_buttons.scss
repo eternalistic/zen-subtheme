@@ -1,31 +1,14 @@
 //
-// Buttons
+// Buttons.
 //
 
-
-// Default button style
-a.button:link,
-a.button:visited,
+// Default button style.
+a.btn,
+a.btn:visited,
 .form-submit {
-  @extend %button;
-
-  &:hover,
-  &:focus,
-  &:active {
-  }
+  @include button;
 }
 
-
-// Button - Primary
-.button-primary {
-  @extend %button;
-  @extend %button-primary;
+.form-submit {
+  @include button-submit;
 }
-
-
-// Button - Secondary
-.button-secondary {
-  @extend %button;
-  @extend %button-secondary;
-}
-

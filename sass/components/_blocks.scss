@@ -1,17 +1,14 @@
 //
-// Blocks
+// Blocks.
 //
 
-
-// Block
+// Block.
 .block {
-  margin-bottom: em(25px);
+  margin-bottom: rem(20px);
 }
 
-
-// Block title
+// Block title.
 h2.block-title {
-  margin-bottom: em(10px);
-
   @include font-size(24);
+  margin-bottom: em(10px);
 }

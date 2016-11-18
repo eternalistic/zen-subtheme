@@ -1,0 +1,196 @@
+//
+// Mixins.
+//
+
+// Makes an element visually hidden, but accessible.
+// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+  clip: auto;
+  height: auto;
+  overflow: auto;
+  position: static !important;
+  width: auto;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}
+
+// SVG background.
+$image-path: '../images' !default;
+$fallback-extension: 'png' !default;
+// $retina-suffix: '@2x';
+
+@mixin svg-bg($name, $dir) {
+  background-image: url(#{$image-path}/#{$dir}/svg/#{$name}.svg);
+  background-repeat: no-repeat;
+
+  // No SVG support
+  .no-svg & {
+    background-image: url(#{$image-path}/#{$dir}/#{$name}.#{$fallback-extension});
+  }
+
+  // Retina image
+  // @if $retina == "retina" {
+  //   @include breakpoint($bp-hidpi) {
+  //     .no-svg & {
+  //       background-image: url(#{$image-path}/#{$dir}/2x/#{$name}#{$retina-suffix}.#{$fallback-extension});
+  //     }
+  //   }
+  // }
+}
+
+// Font size and line-height - Rem and PX fallback.
+@mixin font-size($sizeValue: $base-font-size-integer, $line: $sizeValue * 1.5) {
+  font-size: ($sizeValue) + px;
+  font-size: ($sizeValue / $base-font-size-integer) + rem;
+  line-height: ($line) + px;
+  line-height: ($line / $base-font-size-integer) + rem;
+}
+
+// Wrapper.
+@mixin wrapper {
+  @include clearfix;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  // XLarge +.
+  @include breakpoint($bp-xlarge-up) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Button.
+@mixin button {
+  @include font-size(20, 20);
+  background: $red;
+  border: none;
+  color: $white;
+  display: inline-block;
+  font-family: $montserrat;
+  padding: rem(10px) rem(15px);
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: none;
+  transition: all .3s;
+
+  // Hover and focus.
+  &:hover,
+  &:focus {
+    background: $gray-dark;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+// Button - Submit.
+@mixin button-submit {
+}
+
+// Vertical center.
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+// Full width in container.
+@mixin full-width {
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+}
+
+// Reset list.
+@mixin resetlist {
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+// Image overlay zoom.
+@mixin image-overlay-zoom {
+  overflow: hidden;
+
+  // Overlay.
+  &:after {
+    background: rgba($black, .75);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: all .5s ease;
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    transition: all .5s ease;
+    width: 100%;
+  }
+
+  // Hover.
+  &:focus,
+  &:hover {
+
+    // Overlay.
+    &:after {
+      opacity: 1;
+    }
+
+    img {
+      transform: scale(1.1);
+    }
+  }
+
+  // Small.
+  @include breakpoint($bp-small) {
+
+    // Overlay.
+    &:after {
+      opacity: .65;
+    }
+  }
+}
+
+// Image replacement.
+@mixin imgreplace {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+
+  // Before.
+  &:before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0;
+  }
+}

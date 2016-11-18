@@ -11,9 +11,9 @@
 // use in the normalize.scss file.
 // @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
 
-$base__font-size_integer:   16;
-$base__font-size:           16px;
-$base__line-height:         24px; // This line-height determines the basic unit of vertical rhythm.
+$base-font-size:           16px; // The font size set on the root html element.
+$base-font-size-integer:   strip-units($base-font-size);
+$base-line-height:         24px; // This line-height determines the basic unit of vertical rhythm.
 
 // Letter spacing
 // 1 =1/1000 em
@@ -40,18 +40,30 @@ $verdana:         Verdana, Tahoma, "DejaVu Sans", sans-serif;
 $tahoma:          Tahoma, Verdana, "DejaVu Sans", sans-serif;
 $helvetica:       Helvetica, Arial, "Nimbus Sans L", sans-serif;
 $arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
+$arial-black:     "Arial Black", Gadget, sans-serif;
 
 // For an explanation of why "sans-serif" is at the end of this list, see
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
 $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
-// Web Fonts
-// $font-body:      "ag-book", sans-serif;
-$font-body:       $helvetica;
+// Import Google fonts.
+@import 'https://fonts.googleapis.com/css?family=Lato:400,400i,700|Montserrat:400,700';
+
+$lato:          'Lato', sans-serif;
+$montserrat:    'Montserrat', sans-serif;
 
 // Now create some variables for the font stacks we want to use on this site.
-$base-font-family: $font-body; // The font family set on the html element.
+$base-font-family: $lato; // The font family set on the html element.
+$font-body:        $lato;
 $font-monospace:   $courier;
+
+//
+// Colors, etc.
+//
 
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
+
+// Tab styling.
+$tabs-container-bg: #fff;
+$tabs-border: #bbb;

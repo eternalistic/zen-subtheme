@@ -1,14 +1,175 @@
-
 //
-// Navigation
+// Navigation.
 //
 
-
-// Main menu
 #block-system-main-menu {
+
 }
 
+// Nav toggle.
+#nav__toggle {
+  background-color: red;
+  background: url(../images/icons/bars.svg) no-repeat 13px 50%;
+  color: $gray-dark;
+  cursor: pointer;
+  display: block;
+  height: rem(50px);
+  position: fixed;
+  right: 0;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  transition: none;
+  width: rem(50px);
+  z-index: 101;
 
-// Secondary nav
-#block-menu-menu-secondary-menu {
+  // Medium +.
+  @include breakpoint($bp-medium-up) {
+    display: none !important;
+  }
+
+  // Active.
+  &.is-active {
+    background-image: url(../images/icons/close.svg);
+    background-position: 16px 50%;
+  }
+
+  // Text.
+  span {
+    @include element-invisible;
+  }
+}
+
+// Main menu.
+.menu--main {
+  background: rgba($white, .96);
+  height: 100%;
+  left: 0;
+  margin-bottom: 0;
+  opacity: 0;
+  overflow: auto;
+  padding: rem(70px) rem(20px) rem(20px) rem(20px);
+  position: fixed;
+  top: 0;
+  transition: all .3s ease;
+  visibility: hidden;
+  width: 100%;
+  z-index: 99;
+
+  // Navigation expanded.
+  .is-navigation-expanded & {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // Medium +.
+  @include breakpoint($bp-medium-up) {
+    @include span(9 last);
+    background: transparent;
+    opacity: 1;
+    padding: 0;
+    position: static;
+    visibility: visible;
+  }
+
+  // Medium +.
+  @include breakpoint($bp-medium-up) {
+    padding: 0;
+  }
+
+  // List.
+  ul.menu {
+    @include font-size(20);
+    @include resetlist;
+    font-family: $montserrat;
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 101;
+
+    // Medium +.
+    @include breakpoint($bp-medium-up) {
+      @include font-size(16, 50);
+      text-align: left;
+      float: right;
+    }
+
+    // Large +.
+    @include breakpoint($bp-large-up) {
+      @include font-size(16, 70);
+    }
+
+    li {
+
+      // Medium +.
+      @include breakpoint($bp-medium-up) {
+        float: left;
+        margin-right: rem(35px);
+        position: relative;
+
+        // Divider.
+        &:after {
+          background: $gray-dark;
+          content: '';
+          height: rem(14px);
+          opacity: .25;
+          position: absolute;
+          right: rem(-17px);
+          top: rem(17px);
+          width: rem(2px);
+        }
+      }
+
+      // Large +.
+      @include breakpoint($bp-large-up) {
+
+        // Divider.
+        &:after {
+          top: rem(27px);
+        }
+      }
+
+      // Last.
+      &:last-child {
+        margin-right: 0;
+
+        // Divider.
+        &:after {
+
+          // Medium +.
+          @include breakpoint($bp-medium-up) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    // Links.
+    a,
+    a:visited {
+      color: $gray-dark;
+      display: block;
+      padding: rem(6px) 0;
+      text-decoration: none;
+
+      // Medium +.
+      @include breakpoint($bp-medium-up) {
+        color: $gray-dark;
+        padding: 0;
+        position: relative;
+      }
+
+      // Hover and focus.
+      &:hover,
+      &:focus {
+        color: $red;
+      }
+
+      // Active.
+      &.is-active {
+        color: $red;
+      }
+    }
+  }
 }
