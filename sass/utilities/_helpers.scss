@@ -28,6 +28,11 @@
   }
 }
 
+// Region.
+.region {
+  @include clearfix;
+}
+
 // Inline.
 .inline {
   @include resetlist;

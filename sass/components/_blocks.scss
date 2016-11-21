@@ -5,6 +5,12 @@
 // Block.
 .block {
   margin-bottom: rem(20px);
+
+  // Remove bottom margin from blocks in specific regions.
+  .region-postscript &,
+  .region-footer & {
+    margin-bottom: 0;
+  }
 }
 
 // Block title.

@@ -5,10 +5,6 @@
 
 @include breakpoint-set('to ems', true);
 
-// Force the breakpoint mixin to discard all media queries except ones with
-// $no-query set to true.
-// $breakpoint-no-query-fallbacks : true;
-
 // Hi DPI.
 $bp-hidpi: 								min-resolution 1.5dppx;
 

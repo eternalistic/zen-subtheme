@@ -1,7 +1,7 @@
 {
-  "name": "lf-gulp-dependencies",
+  "name": "gulp-dependencies",
   "version": "1.0.0",
-  "description": "Linux Foundation Gulp Dependencies",
+  "description": "Gulp Dependencies",
   "main": "gulpfile.js",
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"
@@ -19,6 +19,7 @@
     "gulp-sass": "^2.1.0",
     "gulp-sass-glob": "0.0.2",
     "imagemin-pngquant": "^4.2.0",
+    "normalize.css": "^5.0.0",
     "sass-toolkit": "^2.10.0",
     "susy": "^2.2.12"
   }

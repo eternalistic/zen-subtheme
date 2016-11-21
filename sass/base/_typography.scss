@@ -1,0 +1,92 @@
+//
+// Typography.
+//
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $montserrat;
+  font-weight: 700;
+  margin: 0 0 rem(10px) 0;
+}
+
+h1 {
+  @include font-size(24);
+  margin-bottom: 0;
+
+  // Medium +.
+  @include breakpoint($bp-medium-up) {
+    @include font-size(36);
+  }
+}
+
+h2 {
+  @include font-size(18);
+  text-transform: uppercase;
+
+  // Medium +.
+  @include breakpoint($bp-medium-up) {
+    @include font-size(30);
+  }
+}
+
+h3 {
+  @include font-size(16);
+  letter-spacing: .05em;
+  margin-bottom: 0;
+  text-transform: uppercase;
+
+  // Medium +.
+  @include breakpoint($bp-medium-up) {
+    @include font-size(18);
+  }
+}
+
+h4 {
+  @include font-size(24);
+}
+
+h5 {
+  @include font-size(16);
+}
+
+h6 {
+  @include font-size(16);
+}
+
+p {
+  @include font-size(16, 22);
+  margin: 0 0 rem(20px) 0;
+
+  // Medium +.
+  @include breakpoint($bp-medium-up) {
+    @include font-size(18);
+  }
+}
+
+ol,
+ul {
+
+  // Content.
+  .layout-container & {
+    @include font-size(16, 22);
+
+    // Medium +.
+    @include breakpoint($bp-medium-up) {
+      @include font-size(18);
+    }
+  }
+}
+
+hr {
+  background: #ccc;
+  border: none;
+  display: block;
+  height: rem(3px);
+  margin-bottom: rem(40px);
+  margin-top: rem(40px);
+  width: 100%;
+
+  // Medium +.
+  @include breakpoint($bp-medium-up) {
+    width: span(9);
+  }
+}

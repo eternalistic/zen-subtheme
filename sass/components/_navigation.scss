@@ -3,172 +3,167 @@
 //
 
 #block-system-main-menu {
-
+  margin: 0;
 }
 
-// Nav toggle.
-#nav__toggle {
-  background-color: red;
-  background: url(../images/icons/bars.svg) no-repeat 13px 50%;
-  color: $gray-dark;
-  cursor: pointer;
-  display: block;
-  height: rem(50px);
-  position: fixed;
-  right: 0;
-  text-align: center;
-  text-decoration: none;
-  top: 0;
-  transition: none;
-  width: rem(50px);
-  z-index: 101;
+// Navigation.
+.nav {
 
-  // Medium +.
-  @include breakpoint($bp-medium-up) {
-    display: none !important;
-  }
-
-  // Active.
-  &.is-active {
-    background-image: url(../images/icons/close.svg);
-    background-position: 16px 50%;
-  }
-
-  // Text.
-  span {
-    @include element-invisible;
-  }
-}
-
-// Main menu.
-.menu--main {
-  background: rgba($white, .96);
-  height: 100%;
-  left: 0;
-  margin-bottom: 0;
-  opacity: 0;
-  overflow: auto;
-  padding: rem(70px) rem(20px) rem(20px) rem(20px);
-  position: fixed;
-  top: 0;
-  transition: all .3s ease;
-  visibility: hidden;
-  width: 100%;
-  z-index: 99;
-
-  // Navigation expanded.
-  .is-navigation-expanded & {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  // Medium +.
-  @include breakpoint($bp-medium-up) {
-    @include span(9 last);
-    background: transparent;
-    opacity: 1;
-    padding: 0;
-    position: static;
-    visibility: visible;
-  }
-
-  // Medium +.
-  @include breakpoint($bp-medium-up) {
-    padding: 0;
-  }
-
-  // List.
-  ul.menu {
-    @include font-size(20);
-    @include resetlist;
-    font-family: $montserrat;
-    font-weight: 700;
-    position: relative;
+  // Toggle.
+  &__toggle {
+    background: url(../images/icons/bars.svg) no-repeat 13px 50%;
+    color: $gray-dark;
+    cursor: pointer;
+    display: block;
+    height: rem(50px);
+    position: fixed;
+    right: 0;
     text-align: center;
-    text-transform: uppercase;
+    text-decoration: none;
+    top: 0;
+    transition: none;
+    width: rem(50px);
     z-index: 101;
 
     // Medium +.
     @include breakpoint($bp-medium-up) {
-      @include font-size(16, 50);
-      text-align: left;
-      float: right;
+      display: none !important;
     }
 
-    // Large +.
-    @include breakpoint($bp-large-up) {
-      @include font-size(16, 70);
+    // Active.
+    &.is-active {
+      background-image: url(../images/icons/close.svg);
+      background-position: 16px 50%;
     }
 
-    li {
+    // Text.
+    span {
+      @include element-invisible;
+    }
+  }
+
+  // Inner.
+  &__inner {
+    @include container();
+  }
+
+  // Menu.
+  &__menu {
+    background: rgba($white, .96);
+    height: 100%;
+    left: 0;
+    margin-bottom: 0;
+    opacity: 0;
+    overflow: auto;
+    padding: rem(70px) rem(20px) rem(20px) rem(20px);
+    position: fixed;
+    top: 0;
+    transition: all .3s ease;
+    visibility: hidden;
+    width: 100%;
+    z-index: 99;
+
+    // Navigation expanded.
+    .is-navigation-expanded & {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    // Medium +.
+    @include breakpoint($bp-medium-up) {
+      background: $gray-dark;
+      height: rem(40px);
+      opacity: 1;
+      padding: 0;
+      position: static;
+      visibility: visible;
+    }
+
+    // List.
+    ul.menu {
+      @include font-size(20);
+      @include resetlist;
+      font-family: $montserrat;
+      font-weight: 400;
+      position: relative;
+      text-align: center;
+      z-index: 101;
 
       // Medium +.
       @include breakpoint($bp-medium-up) {
-        float: left;
-        margin-right: rem(35px);
-        position: relative;
-
-        // Divider.
-        &:after {
-          background: $gray-dark;
-          content: '';
-          height: rem(14px);
-          opacity: .25;
-          position: absolute;
-          right: rem(-17px);
-          top: rem(17px);
-          width: rem(2px);
-        }
+        @include clearfix;
+        line-height: 100%;
+        margin: 0;
       }
 
       // Large +.
       @include breakpoint($bp-large-up) {
-
-        // Divider.
-        &:after {
-          top: rem(27px);
-        }
       }
 
-      // Last.
-      &:last-child {
-        margin-right: 0;
+      li {
 
-        // Divider.
-        &:after {
+        // Medium +.
+        @include breakpoint($bp-medium-up) {
+          display: inline-block;
+          margin-left: rem(-6px);
+          position: relative;
+        }
 
-          // Medium +.
-          @include breakpoint($bp-medium-up) {
-            display: none;
+        // Last.
+        &:last-child {
+
+          // Links.
+          a,
+          a:visited {
+
+            // Medium +.
+            @include breakpoint($bp-medium-up) {
+              border: none;
+            }
           }
         }
       }
-    }
 
-    // Links.
-    a,
-    a:visited {
-      color: $gray-dark;
-      display: block;
-      padding: rem(6px) 0;
-      text-decoration: none;
-
-      // Medium +.
-      @include breakpoint($bp-medium-up) {
+      // Links.
+      a,
+      a:visited {
         color: $gray-dark;
-        padding: 0;
-        position: relative;
-      }
+        display: block;
+        padding: rem(6px) 0;
+        text-decoration: none;
 
-      // Hover and focus.
-      &:hover,
-      &:focus {
-        color: $red;
-      }
+        // Medium +.
+        @include breakpoint($bp-medium-up) {
+          @include font-size(16, 40);
+          border-right: 1px solid rgba(255, 255, 255, .2);
+          color: $white;
+          display: inline-block;
+          padding: 0 rem(20px);
+          position: relative;
+        }
 
-      // Active.
-      &.is-active {
-        color: $red;
+        // Hover and focus.
+        &:hover,
+        &:focus {
+          color: $green;
+
+          // Medium +.
+          @include breakpoint($bp-medium-up) {
+            background-color: $green;
+            border-color: $black;
+            color: $white;
+          }
+        }
+
+        // Active.
+        &.is-active {
+
+          // Medium +.
+          @include breakpoint($bp-medium-up) {
+            background-color: $green;
+            border-color: $black;
+          }
+        }
       }
     }
   }

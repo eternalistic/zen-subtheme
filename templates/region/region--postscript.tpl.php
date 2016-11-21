@@ -9,7 +9,7 @@
 ?>
 <?php if ($content): ?>
   <div class="<?php print $classes; ?>">
-    <div class="region-preface__inner">
+    <div class="region-postscript__inner">
       <?php print $content; ?>
     </div>
   </div>

@@ -5,6 +5,11 @@
 // NPM components.
 //========================================//
 
+// Normalize.
+// A modern, HTML5-ready alternative to CSS resets.
+// http://necolas.github.io/normalize.css/
+@import "../node_modules/normalize.css/normalize.css";
+
 // Susy.
 // Your markup, your design, your opinions | Our math.
 // http://susy.oddbird.net
@@ -12,13 +17,13 @@
 
 // Breakpoint.
 // Really Simple Media Queries with Sass.
-// + https://github.com/at-import/breakpoint
+// https://github.com/at-import/breakpoint
 @import "../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
 
 // Toolkit.
 // Progressive Enhancement? Simple. Responsive Web Design? Done. Design in
 // Browser? Beautiful.
-// + https://github.com/at-import/toolkit
+// https://github.com/at-import/toolkit
 @import "../node_modules/sass-toolkit/stylesheets/toolkit/_kickstart.scss";
 @import "../node_modules/sass-toolkit/stylesheets/toolkit/_clearfix.scss";
 
@@ -32,26 +37,24 @@
 @import "base/_breakpoint.scss";
 @import "base/_colors.scss";
 
-// Typography.
-@import "base/_fonts.scss";
-
 // Utilities.
 @import "utilities/_mixins.scss";
 
-// Normalize.
-@import "base/normalize/_normalize.scss";
+// Typography.
+@import "base/_fonts.scss";
+@import "base/_typography.scss";
 
 // Helpers.
 @import "utilities/_helpers.scss";
-
-// Import theme.
-@import "theme/*";
 
 // Import layouts.
 @import "layout/*";
 
 // Import components.
 @import "components/*";
+
+// Import theme.
+@import "theme/*";
 
 // Print.
 @import "print/*";
